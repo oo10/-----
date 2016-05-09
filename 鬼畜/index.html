@@ -1,0 +1,99 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+    <title>鬼畜</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-repeat: repeat;
+        background-position: center center;
+        background-size: 14%;
+        animation: zoomIn 40s 2s ease-out infinite;
+        overflow: hidden;
+        font-size: 1em;
+    }
+    ::selection {
+        background:none;
+    }
+    audio {
+        width: 80%;
+        height: 30px;
+        position: fixed;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .boom {
+        pointer-events: none;
+        position: absolute;
+        top: 100px;
+        left: 0;
+        right: 0;
+        text-align: center;
+        font-weight: 800;
+        font-size: 5em;
+        text-shadow: .2em .2em 0 green;
+        animation: shake .3s steps(5) infinite;
+    }
+    /* 震颤 */
+    @keyframes shake {
+        50% {
+            transform: scale(1.1);
+        }
+        33% {
+            color: red;
+        }
+        66% {
+            color: yellow;
+        }
+    }
+    @keyframes zoomIn {
+        0%, 11%, 88%, 100% {
+            background-size: 14%;
+        }
+        22%, 33%, 66%, 77% {
+            background-size: 10%;
+        }
+        44%, 55% {
+            background-size: 8%;
+        }
+    }
+</style>
+<body id="body">
+<span class="boom">ギリギリ*<b id="shake">1</b></span>
+<audio autoplay controls loop src="http://ww.danmu.fm:233/いけないボーダーライン.m4a"></audio>
+<script>
+    var a = 1;
+    var bgUrl = [
+        'http://ww4.sinaimg.cn/large/a15b4afegw1f3i4kc8nzsg208c08c400',
+        'http://ww4.sinaimg.cn/large/a15b4afegw1f3i4kc8nzsg208c08c400',
+        'http://ww4.sinaimg.cn/large/a15b4afegw1f3i4kc8nzsg208c08c400',
+        'http://ww4.sinaimg.cn/large/a15b4afegw1f3i4kbwhkpg20dw07ab29',
+        'http://ww4.sinaimg.cn/large/a15b4afegw1f3i4jywgpsg208704x4p4',
+        'http://ww4.sinaimg.cn/large/a15b4afegw1f3i4jry4y1g204603j13s',
+        'http://ww4.sinaimg.cn/large/a15b4afegw1f3i4jmrh8gg202q02cglu',
+        'http://ww4.sinaimg.cn/large/a15b4afegw1f3i4jlx3mfg208c04rnkl',
+        'http://ww4.sinaimg.cn/large/a15b4afegw1f3i4ivflpdg204603wk18',
+        'http://ww4.sinaimg.cn/large/a15b4afegw1f3ihs5gbl8g203z03nta8',
+        'http://ww4.sinaimg.cn/large/a15b4afegw1f3im4yx0n6g206e07348j',
+        'http://ww4.sinaimg.cn/large/a15b4afegw1f3jn6mk7m9g202s02sq40',
+        'http://ww4.sinaimg.cn/large/a15b4afegw1f3od8rgbjbg206r04wk6a'
+    ];
+    function updata() {
+        var el = document.getElementById("shake");
+        a += Math.round(Math.random()*5);
+        el.innerHTML = a;
+    }
+    function bg(){
+        var el = document.getElementById("body");
+        el.style.backgroundImage = "url('" + bgUrl[Math.floor((Math.random()*bgUrl.length))] + "')";
+    }
+    bg();
+    setInterval("updata()",300);
+    setInterval("bg()",10000);
+</script>
+</body>
+</html>
