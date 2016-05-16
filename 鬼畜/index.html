@@ -11,6 +11,9 @@
         background-repeat: repeat;
         background-position: center center;
         background-size: 14%;
+        -webkit-animation: zoomIn 40s 2s ease-out infinite;
+        -moz-animation: zoomIn 40s 2s ease-out infinite;
+        -ms-animation: zoomIn 40s 2s ease-out infinite;
         animation: zoomIn 40s 2s ease-out infinite;
         overflow: hidden;
         font-size: 1em;
@@ -24,6 +27,9 @@
         position: fixed;
         top: 20px;
         left: 50%;
+        -webkit-transform: translateX(-50%);
+        -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
         transform: translateX(-50%);
     }
     .boom {
@@ -36,18 +42,65 @@
         font-weight: 800;
         font-size: 5em;
         text-shadow: .2em .2em 0 green;
+        -webkit-animation: shake .3s steps(5) infinite;
+        -moz-animation: shake .3s steps(5) infinite;
+        -ms-animation: shake .3s steps(5) infinite;
         animation: shake .3s steps(5) infinite;
     }
     /* 震颤 */
-    @keyframes shake {
-        50% {
-            transform: scale(1.1);
+    @-webkit-keyframes shake{
+        50%{-webkit-transform:scale(1.1);}
+
+        33%{color:red;}
+        66%{color:yellow;}
+    }
+    @-moz-keyframes shake{
+        50%{-moz-transform:scale(1.1);}
+        33%{color:red;}
+        66%{color:yellow;}
+    }
+    @-ms-keyframes shake{
+        50%{-ms-transform:scale(1.1);}
+        33%{color:red;}
+        66%{color:yellow;}
+    }
+    @keyframes shake{
+        50%{transform:scale(1.1);}
+        33%{color:red;}
+        66%{color:yellow;}
+    }
+    /* 背景 */
+    @-webkit-keyframes zoomIn {
+        0%, 11%, 88%, 100% {
+            background-size: 14%;
         }
-        33% {
-            color: red;
+        22%, 33%, 66%, 77% {
+            background-size: 10%;
         }
-        66% {
-            color: yellow;
+        44%, 55% {
+            background-size: 8%;
+        }
+    }
+    @-moz-keyframes zoomIn {
+        0%, 11%, 88%, 100% {
+            background-size: 14%;
+        }
+        22%, 33%, 66%, 77% {
+            background-size: 10%;
+        }
+        44%, 55% {
+            background-size: 8%;
+        }
+    }
+    @-ms-keyframes zoomIn {
+        0%, 11%, 88%, 100% {
+            background-size: 14%;
+        }
+        22%, 33%, 66%, 77% {
+            background-size: 10%;
+        }
+        44%, 55% {
+            background-size: 8%;
         }
     }
     @keyframes zoomIn {
