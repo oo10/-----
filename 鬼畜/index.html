@@ -1,8 +1,9 @@
-<html>
+﻿<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,user-scalable=no">
     <title>鬼畜</title>
+    <link rel="stylesheet" href="http://lib.yangqiwang.cn/contextMenu.css"/>
 </head>
 <style>
     body {
@@ -118,6 +119,13 @@
 <body id="body">
 <span class="boom">ギリギリ*<b id="shake">1</b></span>
 <audio autoplay controls loop src="http://ww.danmu.fm:233/いけないボーダーライン.m4a"></audio>
+<div id="contextMenu">
+    <a href="javascript:menuRefresh()"><i class="refresh"></i>刷新</a>
+    <a href="javascript:menuForward()"><i class="forward"></i>前进</a>
+    <a href="javascript:menuAbout()"><i class="about"></i>关于</a>
+    <a href="javascript:menuBack"><i class="back"></i>后退</a>
+</div>
+<script src='http://lib.yangqiwang.cn/contextMenu.js'></script>
 <script>
     var a = 1;
     var bgUrl = [
