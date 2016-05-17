@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh"><head>
+    <meta charset="utf-8">
+    <title>遇见-发现与邂逅</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />    
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />    
+    <meta content="telephone=no" name="format-detection" />
+    <link rel="stylesheet" href="css/responsive-nav.css">
+    <link rel="stylesheet" href="css/nav-styles.css">
+    <script src="js/responsive-nav.js"></script>
+<!--------------------web整屏-js-------------->
+    <script type='text/javascript'>
+      window.onload=function(){
+      map_width=document.body.clientWidth;//获取body宽度
+      map_height=document.documentElement.clientHeight;//获取页面可见高度
+    //  alert(map_width);
+    //  alert(map_height);
+      document.getElementById('bg-swap').style.height=map_height+'px';
+      document.getElementById('con').style.height=map_height-85+'px';
+      document.getElementById('choose1').style.height=map_width*0.546875+'px';
+      document.getElementById('choose2').style.height=map_width*0.546875+'px';
+      }
+</script>
+<script>
+document.body.addEventListener('touchstart', function () { });
+</script>
+<style>
+body { }
+#con { width:54.6875%; margin:0 auto;}
+.h1-title {background:#b19bf0;}
+.choose { height:54.6875vmin; background-size:cover; margin-top:30px;}
+.find { background-image:url(images/yujian-find.png);}
+.xiehou { background-image:url(images/yujian-xiehou.png);}
+</style>
+  </head>
+  <body>
+    <nav class="nav-collapse">
+      <ul>
+        <li><a style="background-color:#2c7"><b>帮帮</b><span onClick="document.location='zhongchou.html';">众筹</span><span class="nop">|</span><span onClick="document.location='ziyuan.html';">资源交换</span><span class="nop">|</span><span onClick="document.location='tiaozao.html';">跳蚤市场</span><span class="nop">|</span><span onClick="document.location='zaixianqiuzhu.html';">求助</span></a></li>
+        <li><a style="background-color:#2c7"><b>资讯</b><span onClick="document.location='xiaoyuanhuodong.html';">活动</span><span class="nop">|</span><span  onClick="document.location='biyejiyu.html';">毕业寄语</span><span class="nop">|</span><span onClick="document.location='tongzhi.html';">班级管理</span><span class="nop">|</span><span onClick="document.location='jianzhi.html';">兼职</span></a></li>
+        <li><a style="background-color:#2c7"><b>个人</b><span onClick="document.location='zhuce.html';">注册</span><span class="nop">|</span><span>我有话说</span><span class="nop">|</span><span onClick="document.location='fendouguiji.html';">奋斗轨迹</span><span class="nop">|</span><span onClick="document.location='yujian.html';">遇见</span></a></li>
+      </ul>
+    </nav>
+    
+    <div id="main">
+      <h1 class="h1-title">　　遇　见</h1>
+      <!--<h4 class="h2-title">Join us</h4>-->
+      <div id="bg-swap" style="background:url(images/yujian-bg.png) center center;background-size:cover;width:100%;position:fixed;top:0;z-index:-1000;"></div>
+      <div id="con">
+          <a href="yujian-faxian.html"><div class="choose find" id="choose1"></div></a>
+          <a href="yujian-xiehou.html"><div class="choose xiehou" id="choose2"></div></a>
+      </div>
+    </div>
+<!-------------------nav-js-------------------->
+    <script>
+      var navigation = responsiveNav(".nav-collapse", {
+        animate: true,                    // Boolean: Use CSS3 transitions, true or false
+        transition: 284,                  // Integer: Speed of the transition, in milliseconds
+        label: "Menu",                    // String: Label for the navigation toggle
+        insert: "after",                  // String: Insert the toggle before or after the navigation
+        customToggle: "",                 // Selector: Specify the ID of a custom toggle
+        closeOnNavClick: false,           // Boolean: Close the navigation when one of the links are clicked
+        openPos: "relative",              // String: Position of the opened nav, relative or static
+        navClass: "nav-collapse",         // String: Default CSS class. If changed, you need to edit the CSS too!
+        navActiveClass: "js-nav-active",  // String: Class that is added to <html> element when nav is active
+        jsClass: "js",                    // String: 'JS enabled' class which is added to <html> element
+        init: function(){},               // Function: Init callback
+        open: function(){},               // Function: Open callback
+        close: function(){}               // Function: Close callback
+      });
+    </script>
+  </body>
+</html>

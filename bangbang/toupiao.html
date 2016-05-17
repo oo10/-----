@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <title>投票</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />    
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />    
+    <meta content="telephone=no" name="format-detection" />
+    <link rel="stylesheet" href="css/responsive-nav.css">
+    <link rel="stylesheet" href="css/nav-styles.css">
+    <script src="js/responsive-nav.js"></script>
+<style type="text/css">
+body { height:100%;}
+.h1-title{background:#2c7;}
+.box { margin:20px 0; height:80px; width:100%; border-bottom:1px dotted #C0C0C0; border-top:1px dotted #C0C0C0; -webkit-box-shadow:10px #D4D4D4;box-shadow:2px 2px 5px #D4D4D4;}
+.box a { text-decoration:none;}
+.box .title { font-weight:bold; color:#6C6C6C; line-height:80px; text-align:center; display:block;}
+.box span:after { content:" >>"; font-weight:bold; }
+footer {    width:100%;
+            height:60px;
+            background-color: #ff8a40;
+            position: fixed;
+            bottom: 0px;
+            overflow-x: hidden;
+            overflow-y: auto;
+		    z-index:99;
+}
+footer li { float:left; width:33.33%; text-align:center; list-style:none;}
+footer li a { display:block;
+             line-height: 60px;
+            vertical-align: center;
+            font-family: 微软雅黑;
+            font-size:16px;
+            color: white;
+			text-decoration:none;}
+footer li a img { height:16px; border:none;}
+footer li a { text-decoration:none;}
+</style>
+<!--------------------web整屏-js-------------->
+    <script type='text/javascript'>
+      window.onload=function(){
+      map_width=document.body.clientWidth;//获取body宽度
+      map_height=document.documentElement.clientHeight;//获取页面可见高度
+    //  alert(map_width);
+    //  alert(map_height);
+      document.getElementById('bg-swap').style.height=map_height+'px';
+      document.getElementById('con').style.height=map_height-55+'px';
+      }
+    </script>
+</head>
+
+<body>
+    <nav class="nav-collapse">
+      <ul>
+        <li><a style="background-color:#2c7"><b>帮帮</b><span onClick="document.location='zhongchou.html';">众筹</span><span class="nop">|</span><span>资源交换</span><span class="nop">|</span><span>跳蚤市场</span><span class="nop">|</span><span onClick="document.location='zaixianqiuzhu.html';">求助</span></a></li>
+        <li><a style="background-color:#2c7"><b>资讯</b><span onClick="document.location='xiaoyuanhuodong.html';">活动</span><span class="nop">|</span><span>毕业寄语</span><span class="nop">|</span><span onClick="document.location='tongzhi.html';">班级管理</span><span class="nop">|</span><span onClick="document.location='jianzhi.html';">兼职</span></a></li>
+        <li><a style="background-color:#2c7"><b>个人</b><span onClick="document.location='zhuce.html';">注册</span><span class="nop">|</span><span>我有话说</span><span class="nop">|</span><span>奋斗轨迹</span><span class="nop">|</span><span>遇见</span></a></li>
+      </ul>
+    </nav>
+    <div id="main">
+      <h1 class="h1-title">　　投票</h1>
+      <div id="bg-swap" style="background:url(images/job-bg.jpg) center center no-repeat; opacity:.1;"></div>
+      <div id="con">
+      <div style="height:1px; width:100%;"></div>
+      <div class="box first-box">
+          <a href="toupiao-faqi.html"><p class="title"><font color="#ff8a40" size="+2">发 起 投 票</font></p></a>
+      </div>
+
+      <div class="box">
+          <a href="toupiao-zhanshi.html"><span class="title">湖南理工学院计科1302班班干选举</span></a>
+      </div>
+      <div class="box">
+          <a href="#"><span class="title">湖南理工学院2015最美教师评选</span></a>
+      </div>
+      <div class="box">
+          <a href="#"><span class="title">湖南理工学院计科1302班班干选举</span></a>
+      </div>
+          <footer>
+                <ul>
+                    <li><a href="#"><img src="images/icon_class_tongzhi.png">&nbsp;通知</a></li>
+                    <li><a href="#"><img src="images/icon_class_vote.png">&nbsp;投票</a></li>
+                    <li><a href="#"><img src="images/icon_class_dianming.png">&nbsp;点名</a></li>
+                </ul>
+          </footer>
+      </div>
+    </div>
+<!-------------------nav-js-------------------->
+    <script>
+      var navigation = responsiveNav(".nav-collapse", {
+        animate: true,                    // Boolean: Use CSS3 transitions, true or false
+        transition: 284,                  // Integer: Speed of the transition, in milliseconds
+        label: "Menu",                    // String: Label for the navigation toggle
+        insert: "after",                  // String: Insert the toggle before or after the navigation
+        customToggle: "",                 // Selector: Specify the ID of a custom toggle
+        closeOnNavClick: false,           // Boolean: Close the navigation when one of the links are clicked
+        openPos: "relative",              // String: Position of the opened nav, relative or static
+        navClass: "nav-collapse",         // String: Default CSS class. If changed, you need to edit the CSS too!
+        navActiveClass: "js-nav-active",  // String: Class that is added to <html> element when nav is active
+        jsClass: "js",                    // String: 'JS enabled' class which is added to <html> element
+        init: function(){},               // Function: Init callback
+        open: function(){},               // Function: Open callback
+        close: function(){}               // Function: Close callback
+      });
+    </script>
+
+</body>
+</html>

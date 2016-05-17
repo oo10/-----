@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh"><head>
+    <meta charset="utf-8">
+    <title>遇见-发布页</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />    
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />    
+    <meta content="telephone=no" name="format-detection" />
+    <link rel="stylesheet" href="css/responsive-nav.css">
+    <link rel="stylesheet" href="css/nav-styles.css">
+    <script src="js/responsive-nav.js"></script>
+    <script src="js/jquery.min.js"></script>
+<!--------------------web整屏-js-------------->
+    <script type='text/javascript'>
+      window.onload=function(){
+      map_width=document.body.clientWidth;//获取body宽度
+      map_height=document.documentElement.clientHeight;//获取页面可见高度
+    //  alert(map_width);
+    //  alert(map_height);
+      document.getElementById('bg-swap').style.height=map_height+'px';
+      document.getElementById('con').style.height=map_height-85+'px';
+      }
+</script>
+<script>
+document.body.addEventListener('touchstart', function () { });
+</script>
+<style>
+body { }
+#con {width:100%; overflow-x:hidden; margin:0 auto;}
+.h1-title {background:#b19bf0;}
+.textarea { width:80%; height:180px; padding:20px 10px;  margin-left:5%; margin:0 auto; position:relative;}
+textarea { width:100%; height:100%; border:1px sosolid #000;  padding:10px 0 0 10px;font-size:14px;}
+.appea,input {-webkit-appearance: none; appearance: none; outline:none;}
+.button-box { height:34px; width:176px; position:absolute; bottom:-40px; right:0;}
+button { background:none; border:none; outline:none;}
+.submit,.addpic{ width:88px; height:34px;}
+button a {display: block;text-align: center;color: #FFF; font-size: 14px; line-height:24px;cursor: pointer; text-decoration:none;}
+.addpic { position:absolute; background:#ff6a6a; bottom:0px; right:88px;}
+.submit { position:absolute; background:#52d3b8; bottom:0px; right:0px;}
+#choose-file {}
+.copyFile { position:absolute; left:14px; bottom:10px;background:transparent; border:none; width:100%; color:#969696;}
+input.uploadFile {
+	opacity:0;
+	filter:alpha(opacity=0);
+	cursor:pointer;
+	overflow: hidden; position:absolute; width:88px; height:40px; bottom:-3px; right:88px; opacity:0;
+}
+
+</style>
+  </head>
+  <body>
+    <nav class="nav-collapse">
+      <ul>
+        <li><a style="background-color:#2c7"><b>帮帮</b><span onClick="document.location='zhongchou.html';">众筹</span><span class="nop">|</span><span onClick="document.location='ziyuan.html';">资源交换</span><span class="nop">|</span><span onClick="document.location='tiaozao.html';">跳蚤市场</span><span class="nop">|</span><span onClick="document.location='zaixianqiuzhu.html';">求助</span></a></li>
+        <li><a style="background-color:#2c7"><b>资讯</b><span onClick="document.location='xiaoyuanhuodong.html';">活动</span><span class="nop">|</span><span  onClick="document.location='biyejiyu.html';">毕业寄语</span><span class="nop">|</span><span onClick="document.location='tongzhi.html';">班级管理</span><span class="nop">|</span><span onClick="document.location='jianzhi.html';">兼职</span></a></li>
+        <li><a style="background-color:#2c7"><b>个人</b><span onClick="document.location='zhuce.html';">注册</span><span class="nop">|</span><span>我有话说</span><span class="nop">|</span><span onClick="document.location='fendouguiji.html';">奋斗轨迹</span><span class="nop">|</span><span onClick="document.location='yujian.html';">遇见</span></a></li>
+      </ul>
+    </nav>
+    
+    <div id="main">
+      <h1 class="h1-title">　　遇见</h1>
+      <!--<h4 class="h2-title">Join us</h4>-->
+      <div id="bg-swap" style="background:url(images/yujian-bg.png) center center;background-size:cover;width:100%;position:fixed;top:0;z-index:-1000;"></div>
+      <div id="con">
+      <form action="#" onSubmit="check()">
+          <div class="textarea">
+           <textarea class="appea" id="textarea" maxlength="100" autofocus required style="background:transparent;"></textarea>
+           <input type="text" name="copyFile"  class="copyFile" placeholder="支持jpg、jpeg、png、gif格式，大小不超过2M。" readonly>
+           <div class="button-box">
+               <button type="button" class="addpic"><a href="javascript:void(0);">添加图片</a></button>
+               <button type="submit" class="submit"><a>发送</a></button>
+               <input type="file" id="choose-file" class="uploadFile" name="upload" accept="image/png,image/gif,image/jpg,image/jpeg"  onchange="getFile(this,'copyFile')" />
+        <script type="text/javascript">
+			function getFile(obj,inputName){
+				var file_name = $(obj).val();
+				$("input[name='"+inputName+"']").val(file_name);
+			}
+        </script>
+           </div>
+          </div>
+      </form>
+      </div>
+    </div>
+<!-------------------检测-js-------------------->
+<script language="javascript"> 
+function check(){ 
+
+if (document.getElementById("textarea").value.length==0) {
+alert("请输入内容再提交哦~");
+document.getElementById("textarea").focus();
+return false;
+}} 
+</script> 
+<!-------------------nav-js-------------------->
+    <script>
+      var navigation = responsiveNav(".nav-collapse", {
+        animate: true,                    // Boolean: Use CSS3 transitions, true or false
+        transition: 284,                  // Integer: Speed of the transition, in milliseconds
+        label: "Menu",                    // String: Label for the navigation toggle
+        insert: "after",                  // String: Insert the toggle before or after the navigation
+        customToggle: "",                 // Selector: Specify the ID of a custom toggle
+        closeOnNavClick: false,           // Boolean: Close the navigation when one of the links are clicked
+        openPos: "relative",              // String: Position of the opened nav, relative or static
+        navClass: "nav-collapse",         // String: Default CSS class. If changed, you need to edit the CSS too!
+        navActiveClass: "js-nav-active",  // String: Class that is added to <html> element when nav is active
+        jsClass: "js",                    // String: 'JS enabled' class which is added to <html> element
+        init: function(){},               // Function: Init callback
+        open: function(){},               // Function: Open callback
+        close: function(){}               // Function: Close callback
+      });
+    </script>
+  </body>
+</html>

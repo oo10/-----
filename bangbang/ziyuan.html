@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh"><head>
+    <meta charset="utf-8">
+    <title>帮帮-资源交换</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />    
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />    
+    <meta content="telephone=no" name="format-detection" />
+    <link rel="stylesheet" href="css/responsive-nav.css">
+    <link rel="stylesheet" href="css/nav-styles.css">
+    <script src="js/responsive-nav.js"></script>
+<!--------------------web整屏-js-------------->
+    <script type='text/javascript'>
+      window.onload=function(){
+      map_width=document.body.clientWidth;//获取body宽度
+      map_height=document.documentElement.clientHeight;//获取页面可见高度
+    //  alert(map_width);
+    //  alert(map_height);
+      document.getElementById('bg-swap').style.height=map_height+'px';
+      document.getElementById('con').style.height=map_height-55+'px';
+      }
+</script>
+<script>
+document.body.addEventListener('touchstart', function () { });
+</script>
+<style>
+.br { width:100%; height:30px; clear:both;}
+.h1-title {
+	background:#2c7;
+}
+.box { width:45vmin; height:45vmin; margin:20px 0 0 3%; float:left; position:relative;overflow: hidden; transition:.5s all ease;text-transform: uppercase;background:-moz-linear-gradient(top,#ace,#f96);/*Mozilla*/
+background:-webkit-gradient(linear,0 50%,100% 50%,from(#ace),to(#f96));/*Old gradient for webkit*/
+background:-webkit-linear-gradient(top,#ace,#f96);/*new gradient for Webkit*/
+background:-o-linear-gradient(top,#ace,#f96); /*Opera11*/
+border-radius:10px 10px 0 0 ;}
+.box .title {  height:100%;  width:45vmin; height:35vmin;
+  overflow:hidden;
+  position:relative;
+  display:table-cell;
+  text-align:center;
+  vertical-align:middle;  padding:5px;
+}
+ p {
+  position:static;
+  +position:relative;
+  top:50%;
+  *top:40%;
+  width:100%;
+  margin-left:auto;
+  margin-right:auto;
+  font-size:20px;
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  color:#666;
+  }
+ .box:hover { background:#CCC;}
+ .box .text { background:rgba(0,204,153,.6); width:100%; height:20%; position:absolute; bottom:0;  overflow:hidden; text-align:center;}
+ .box .text a {
+  width:100%;
+ display:block;
+ text-align:center; vertical-align:middle; font-size:20px; display:block; text-decoration:none; color:#FFf;
+}
+
+.cd-form { width:95%; margin:0 auto; overflow:hidden;}
+.cd-form .fieldset {
+  position: relative;
+  margin: 1em 0;
+}
+.cd-form .fieldset:first-child {
+  margin-top: 1em;
+}
+.cd-form .fieldset:last-child {
+  margin-bottom: 0;
+}
+.cd-form label {
+  font-size: 16px;
+  font-size: 0.875rem;
+}
+.cd-form label.image-replace {
+  /* replace text with an icon */
+  display: inline-block;
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  bottom: auto;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  height: 20px;
+  width: 20px;
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  color: transparent;
+  text-shadow: none;
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+}
+.cd-form label.cd-1 {
+  background-image: url("images/cd-icon-1.svg");
+}
+.cd-form label.cd-2 {
+  background-image: url("images/cd-icon-2.svg");
+}
+.cd-form input {
+  margin: 0;
+  padding: 0;
+  border-radius: 0.25em;
+}
+.cd-form input.full-width {
+  width: 100%;
+}
+.cd-form input.full-width2 {
+  width: 100%;
+}
+.cd-form input.has-padding {
+  padding: 12px 20px 12px 50px;
+}
+.cd-form input.has-border {
+  border: 1px solid #d2d8d8;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
+.cd-form input.has-border:focus {
+  border-color: #343642;
+  box-shadow: 0 0 5px rgba(52, 54, 66, 0.1);
+  outline: none;
+}
+.cd-form input.has-error {
+  border: 1px solid #d76666;
+}
+.cd-form input[type=password] {
+  /* space left for the HIDE button */
+  padding-right: 65px;
+}
+.cd-form input[type=submit] {
+  padding: 16px 0;
+  cursor: pointer;
+  background: rgba(0,204,153,.8);
+  color: #FFF;
+  font-weight: bold;
+  border: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
+.no-touch .cd-form input[type=submit]:hover, .no-touch .cd-form input[type=submit]:focus {
+  background: #3599ae;
+  outline: none;
+}
+
+    </style>
+  </head>
+  <body>
+    <nav class="nav-collapse">
+      <ul>
+        <li><a style="background-color:#2c7"><b>帮帮</b><span onClick="document.location='zhongchou.html';">众筹</span><span class="nop">|</span><span>资源交换</span><span class="nop">|</span><span>跳蚤市场</span><span class="nop">|</span><span onClick="document.location='zaixianqiuzhu.html';">求助</span></a></li>
+        <li><a style="background-color:#2c7"><b>资讯</b><span onClick="document.location='xiaoyuanhuodong.html';">活动</span><span class="nop">|</span><span>毕业寄语</span><span class="nop">|</span><span onClick="document.location='tongzhi.html';">班级管理</span><span class="nop">|</span><span onClick="document.location='jianzhi.html';">兼职</span></a></li>
+        <li><a style="background-color:#2c7"><b>个人</b><span onClick="document.location='zhuce.html';">注册</span><span class="nop">|</span><span>我有话说</span><span class="nop">|</span><span>奋斗轨迹</span><span class="nop">|</span><span>遇见</span></a></li>
+      </ul>
+    </nav>
+    
+    <div id="main">
+      <h1 class="h1-title">　　资源交换</h1>
+      <!--<h4 class="h2-title">Join us</h4>-->
+      <div id="bg-swap" style="background:-moz-linear-gradient(top,#ace,#f96);background:-webkit-gradient(linear,0 50%,100% 50%,from(#ace),to(#f96));background:-webkit-linear-gradient(top,#ace,#f96);background:-o-linear-gradient(top,#ace,#f96);"></div>
+      <div class="upload">
+				<form class="cd-form" onSubmit="return check()">
+					<p class="fieldset">
+						<label class="image-replace cd-1" for="name" >名称</label>
+						<input class="full-width has-padding has-border" id="name" type="text" placeholder="输入资源名称">
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace cd-2" for="dizhi">地址</label>
+						<input class="full-width has-padding has-border" id="dizhi" type="text"  placeholder="粘贴资源地址">
+					</p>
+
+					<p class="fieldset">
+						<input class="full-width2" type="submit" value="发 布">
+					</p>
+				</form>
+      </div>
+      <div id="con">
+             <div id="BH" class="box">
+                 <div class="title"><p>侏罗纪世界高清版</p></div>
+                 <div class="text"><a href="http://pan.baidu.com/s/1qW3eF5i" target="_blank">去瞅瞅</a></div>
+             </div>
+             <div id="BH" class="box">
+                 <div class="title"><p>PHP教程</p></div>
+                 <div class="text"><a href="http://pan.baidu.com/s/1o6oRCXO" target="_blank">去瞅瞅</a></div>
+             </div>
+             <div id="BH" class="box">
+                 <div class="title"><p>Java SE基础教程</p></div>
+                 <div class="text"><a href="http://pan.baidu.com/s/1kTqttFh" target="_blank">去瞅瞅</a></div>
+             </div>
+             <div id="BH" class="box">
+                 <div class="title"><p>PS精品教程</p></div>
+                 <div class="text"><a href="http://pan.baidu.com/s/1dDwAEi9#" target="_blank">去瞅瞅</a></div>
+             </div>
+             <div id="BH" class="box">
+                 <div class="title"><p>C语言精品教程</p></div>
+                 <div class="text"><a href="http://pan.baidu.com/s/1eQ8f7jG" target="_blank">去瞅瞅</a></div>
+             </div>
+             <div id="BH" class="box">
+                 <div class="title"><p>Virtual studio 2013</p></div>
+                 <div class="text"><a href="http://pan.baidu.com/s/1ntsWyXb" target="_blank">去瞅瞅</a></div>
+             </div>
+      <div class="br"></div>
+      </div>
+    </div>
+<!-------------------检测-js-------------------->
+<script language="javascript"> 
+function check(){ 
+
+if (document.getElementById("name").value.length==0) {
+alert("请输入资源名称");
+document.getElementById("name").focus();
+return false;
+}
+
+str=document.getElementById("dizhi").value;
+str = str.match(/http:\/\/.+/); 
+if (str == null){ 
+alert('你输入的链接无效'); 
+return false; 
+}else{ 
+return true; 
+} 
+} 
+</script> 
+<!-------------------nav-js-------------------->
+    <script>
+      var navigation = responsiveNav(".nav-collapse", {
+        animate: true,                    // Boolean: Use CSS3 transitions, true or false
+        transition: 284,                  // Integer: Speed of the transition, in milliseconds
+        label: "Menu",                    // String: Label for the navigation toggle
+        insert: "after",                  // String: Insert the toggle before or after the navigation
+        customToggle: "",                 // Selector: Specify the ID of a custom toggle
+        closeOnNavClick: false,           // Boolean: Close the navigation when one of the links are clicked
+        openPos: "relative",              // String: Position of the opened nav, relative or static
+        navClass: "nav-collapse",         // String: Default CSS class. If changed, you need to edit the CSS too!
+        navActiveClass: "js-nav-active",  // String: Class that is added to <html> element when nav is active
+        jsClass: "js",                    // String: 'JS enabled' class which is added to <html> element
+        init: function(){},               // Function: Init callback
+        open: function(){},               // Function: Open callback
+        close: function(){}               // Function: Close callback
+      });
+    </script>
+  </body>
+</html>

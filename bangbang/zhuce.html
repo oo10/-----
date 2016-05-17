@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8">
+    <title>注册页面</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />    
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />    
+    <meta content="telephone=no" name="format-detection" />
+    <link rel="stylesheet" href="css/responsive-nav.css">
+    <link rel="stylesheet" href="css/nav-styles.css">
+    <link rel="stylesheet" href="css/1.css">
+    <script src="js/responsive-nav.js"></script>
+  </head>
+  <body>
+<!--------------------web整屏-js-------------->
+    <script type='text/javascript'>
+      window.onload=function(){
+      map_width=document.body.clientWidth;//获取body宽度
+      map_height=document.documentElement.clientHeight;//获取页面可见高度
+    //  alert(map_width);
+    //  alert(map_height);
+      document.getElementById('bg-swap').style.height=map_height+'px';
+      document.getElementById('con').style.height=map_height-55+'px';
+      }
+    </script>
+
+<!-------------------学院选择-js-------------->
+    <script type="text/javascript">
+       function addOneOption1()
+       {
+           var xuexiao=document.getElementById("xuexiao");
+           var xueyuan=document.getElementById("xueyuan");
+           var xueyuanNum=xueyuan.options.length;
+           while(xueyuanNum!=0)
+           {
+               xueyuan.options.remove(xueyuanNum);
+               xueyuanNum--;
+           }
+           if(xuexiao.value=='hnist')
+           {
+               xueyuan.options[xueyuan.length] = new Option("计算机学院", "jsjxy");
+               xueyuan.options[xueyuan.length] = new Option("机械学院", "机械学院");
+               xueyuan.options[xueyuan.length] = new Option("物电学院", "物电学院");
+           }
+       }
+	   
+	   function addOneOption2()
+       {
+           var xueyuan=document.getElementById("xueyuan");
+		   var zhuanye=document.getElementById("zhuanye");
+		   var zhuanyeNum=zhuanye.options.length;
+		   while(zhuanyeNum!=0)
+           {
+               zhuanye.options.remove(zhuanyeNum);
+               zhuanyeNum--;
+           }
+		   if(xueyuan.value=='jsjxy')
+           {
+               zhuanye.options[zhuanye.length] = new Option("软件工程", "计算机学院");
+               zhuanye.options[zhuanye.length] = new Option("网络工程", "机械学院");
+               zhuanye.options[zhuanye.length] = new Option("计算机科学与技术", "物电学院");
+           }
+       }
+   </script>
+   
+<!-------------------校验表单-js-------------->
+<script type="text/javascript">    
+//          function pw() {
+//              var pw1 = document.getElementById("pw1").value;
+//              var pw2 = document.getElementById("pw2").value;
+//              if(pw1 == pw2) {
+//                  document.getElementById("submit").disabled = false;
+//
+//              }
+//              else {
+//                document.getElementById("queren").innerHTML="<font color='#f19a16'><b>输入不一致</b></font>";
+//                document.getElementById("submit").disabled = true;
+//              }
+//          }
+
+             function toVaild(){
+               var pw1 = document.getElementById("pw1").value;
+               var pw2 = document.getElementById("pw2").value;
+
+               if (document.getElementById("xuehao").value.length!=11) {
+               alert("亲，学号不对哦!");
+			   document.getElementById("xuehao").focus();
+			   return false;
+				 				 }
+               if (pw1!=pw2) {
+               alert("密码输入不一致!");
+			   document.getElementById("pw1").focus();
+			   return false;
+				 				 }
+               if (document.getElementById("xingming").value.length==0) {
+               alert("请输入姓名~");
+			   document.getElementById("xingming").focus();
+			   return false;
+				 				 }
+               if (document.getElementById("sex").value=='none') {
+               alert("请选择性别~");
+			   document.getElementById("sex").focus();
+			   return false;
+				 				 }
+               if (document.getElementById("qq").value.length<6) {
+               alert("QQ号码格式错误!");
+			   document.getElementById("qq").focus();
+			   return false;
+				 				 }
+               if (document.getElementById("phone").value.length<11) {
+               alert("手机号码是不是写错了？");
+			   document.getElementById("phone").focus();
+			   return false;
+				 				 }
+               if (document.getElementById("xuexiao").value=='none') {
+               alert("请选择学校~");
+			   return false;
+				 				 }
+               if (document.getElementById("xueyuan").value=='none') {
+               alert("请选择学院~");
+			   return false;
+				 				 }
+               if (document.getElementById("zhuanye").value=='none') {
+               alert("请选择你所在的专业~");
+			   return false;
+				 				 }
+               if (document.getElementById("class").value.length<4) {
+               alert("班级格式错误!");
+			   document.getElementById("class").focus();
+			   return false;
+				 				 }
+			 }
+</script>
+    <nav class="nav-collapse">
+      <ul>
+        <li><a style="background-color:#2c7"><b>帮帮</b><span onClick="document.location='zhongchou.html';">众筹</span><span class="nop">|</span><span>资源交换</span><span class="nop">|</span><span>跳蚤市场</span><span class="nop">|</span><span onClick="document.location='zaixianqiuzhu.html';">求助</span></a></li>
+        <li><a style="background-color:#2c7"><b>资讯</b><span onClick="document.location='xiaoyuanhuodong.html';">活动</span><span class="nop">|</span><span>毕业寄语</span><span class="nop">|</span><span onClick="document.location='tongzhi.html';">班级管理</span><span class="nop">|</span><span onClick="document.location='jianzhi.html';">兼职</span></a></li>
+        <li><a style="background-color:#2c7"><b>个人</b><span onClick="document.location='zhuce.html';">注册</span><span class="nop">|</span><span>我有话说</span><span class="nop">|</span><span>奋斗轨迹</span><span class="nop">|</span><span>遇见</span></a></li>
+      </ul>
+    </nav>
+    
+    <div id="main">
+      <h1 class="h1-title">　　加入我们</h1>
+      <!--<h4 class="h2-title">Join us</h4>-->
+      <div id="bg-swap"></div>
+      <div id="con">
+          <form action="../deal/deal.php" method="post" onsubmit="return toVaild()">
+              <div class="form">
+                  <ul>
+                      <li>
+                          <div class="fl la_bg tc"><label class="lable">学号</label></div>
+                          <div class="fl l_r"><input id="xuehao" name="xuehao" type="tel" placeholder="请输入您的学号"    class="input-box" autocomplete="off"    style="background:transparent;" maxlength="11" onkeyup="value=value.replace(/[^\d]/g,'') " 
+      onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" ></div>
+                      </li>
+					  <li>
+                          <div class="fl la_bg tc"><label class="lable">密码</label></div>
+                          <div class="fl l_r"><input id="pw1" name="mima" type="password" placeholder="请输入密码"    class="input-box" autocomplete="off" style="background:transparent;" maxlength="20"></div>
+                      </li>
+					  <li>
+                          <div class="fl la_bg tc"><label class="lable">确认</label></div>
+                          <div class="fl l_r"><input id="pw2" name="querenmima" type="password" placeholder="请确认密码"  class="input-box" autocomplete="off" style="background:transparent;" maxlength="20"></div>
+                      </li>
+                      <li>
+                          <div class="fl la_bg tc"><label class="lable">姓名</label></div>
+                          <div class="fl l_r"><input id="xingming" name="xingming" type="text" placeholder="请输入姓名"  class="input-box" autocomplete="off" style="background:transparent;"></div>
+                      </li>
+                      <li>
+                          <div class="fl la_bg tc"><label class="lable">性别</label></div>
+                          <div class="fl l_r"><select id="sex" name="sex"  class="select-box" style="background:transparent;">
+                              <option value ="none" selected>请选择</option>
+                              <option value ="男">男生</option>
+                              <option value ="女">女生</option></select>
+                          </div>
+                      </li>
+                      <li>
+                          <div class="fl la_bg tc"><label class="lable">QQ号</label></div>
+                          <div class="fl l_r"><input id="qq" name="qq" type="tel" placeholder="请输入您的QQ"  class="input-box" autocomplete="off" style="background:transparent;imeMode:disabled;" maxlength="12" onkeyup="value=value.replace(/[^\d]/g,'') " 
+      onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" ></div>
+                      </li>
+                      <li>
+                          <div class="fl la_bg tc"><label class="lable">手机号</label></div>
+                          <div class="fl l_r"><input id="phone" name="dianhua" type="tel" placeholder="请输入您的手机号"  class="input-box" autocomplete="off" style="background:transparent;imeMode:disabled;" maxlength="11" onkeyup="value=value.replace(/[^\d]/g,'') " 
+      onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" ></div>
+                      </li>
+                      <li>
+                          <div class="fl la_bg tc"><label class="lable">学校</label></div>
+                          <div class="fl l_r"><select id="xuexiao" name="school" onChange="addOneOption1()"  class="select-box" style="background:transparent;">
+                              <option value ="none" selected>请选择</option><option value ="hnist">湖南理工学院</option></select>
+                          </div>
+                      </li>
+                      <li>
+                          <div class="fl la_bg tc"><label class="lable">学院</label></div>
+                          <div class="fl l_r"><select id="xueyuan" name="xueyuan" on onChange="addOneOption2()" class="select-box" style="background:transparent;">
+                              <option value ="none" selected>请选择</option></select>
+                          </div>
+                      </li>
+                      <li>
+                          <div class="fl la_bg tc"><label class="lable">专业</label></div>
+                          <div class="fl l_r"><select id="zhuanye" name="zhuanye" on class="select-box" style="background:transparent;">
+                              <option value ="none" selected>请选择</option></select>
+                          </div>
+                      </li>
+                      <li>
+                          <div class="fl la_bg tc"><label class="lable">班级</label></div>
+                          <div class="fl l_r"><input id="class" name="banji" type="tel" placeholder="请输入班级(四位数字)"  class="input-box" autocomplete="off" style="background:transparent;imeMode:disabled;" maxlength="4" onkeyup="value=value.replace(/[^\d]/g,'') " 
+      onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" ></div>
+                      </li>
+                  </ul>
+                  <div class="tijiao"><input type="submit"  value="提交信息"  class="but"></div>
+
+              </div>
+          </form>
+        </div>
+
+      
+      </div>
+    </div>
+<!-------------------nav-js-------------------->
+    <script>
+      var navigation = responsiveNav(".nav-collapse", {
+        animate: true,                    // Boolean: Use CSS3 transitions, true or false
+        transition: 284,                  // Integer: Speed of the transition, in milliseconds
+        label: "Menu",                    // String: Label for the navigation toggle
+        insert: "after",                  // String: Insert the toggle before or after the navigation
+        customToggle: "",                 // Selector: Specify the ID of a custom toggle
+        closeOnNavClick: false,           // Boolean: Close the navigation when one of the links are clicked
+        openPos: "relative",              // String: Position of the opened nav, relative or static
+        navClass: "nav-collapse",         // String: Default CSS class. If changed, you need to edit the CSS too!
+        navActiveClass: "js-nav-active",  // String: Class that is added to <html> element when nav is active
+        jsClass: "js",                    // String: 'JS enabled' class which is added to <html> element
+        init: function(){},               // Function: Init callback
+        open: function(){},               // Function: Open callback
+        close: function(){}               // Function: Close callback
+      });
+    </script>
+  </body>
+</html>

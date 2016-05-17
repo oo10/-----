@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8">
+    <title>帮帮-众筹</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />    
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />    
+    <meta content="telephone=no" name="format-detection" />
+    <link rel="stylesheet" href="css/responsive-nav.css">
+    <link rel="stylesheet" href="css/nav-styles.css">
+    <script src="js/responsive-nav.js"></script>
+    <script src="js/jquery.min.js"></script>
+<script>
+document.body.addEventListener('touchstart', function () { });
+</script>
+<style>
+body {
+	background:#FFF;
+	overflow-x:hidden;
+}
+input,textarea {
+	-webkit-appearance:none;
+	appearance:none;
+}
+#con {
+	width:96%;
+	margin:0 auto;
+}
+.h1-title {
+	background:#52d4b8;
+}
+.p1 {
+	height:54px;
+	width:100%;
+	background:#bfbfbf;
+	margin-top:20px;
+	overflow:hidden;
+}
+.p1 li {
+	width:33.33%;
+	height:54px;
+	float:left;
+	list-style:none;
+	position:relative;
+}
+.p1 li.light {
+	background:#fc9078;
+}
+.p1 li span:after {
+	content: close-quote;
+	width:37.2px;
+	height:37.2px;
+	line-height:0;
+	border:1px solid #FFF;
+	border-bottom:none;
+	border-left:none;
+	background:#fc9078;
+	position:absolute;
+	top:8px;
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	right:-17px;
+	z-index:0;
+}
+.p1 li.san2 span:after {
+	background:#bfbfbf;
+}
+.p1 li a {
+	display:block;
+	color:#fff;
+	text-align:center;
+	line-height:53px;
+	position:relative;
+	z-index:2;
+}
+.p2 {
+	margin-top:30px;
+}
+.line {
+	width:100%;
+	height:2px;
+	background:#666;
+	margin-top:4px;
+}
+.p2 .form .box {
+	margin-top:10px;
+	position:relative;
+	width:96%;
+}
+.p2 .form .box input,textarea { border:1px solid #D2D2D2;
+-moz-box-shadow:2px 2px 5px #D2D2D2; -webkit-box-shadow:2px 2px 5px #D2D2D2; box-shadow:2px 2px 5px #D2D2D2;}
+.br20 {
+	height:20px;
+	width:100%;
+	float:left;
+}
+.lineh40 {
+	line-height:46px;
+}
+.wt100 {
+	width:100%;
+}
+.wt24 {
+	width:24%;
+}
+.wt76 {
+	width:76%;
+}
+.wt55 {
+	width:50%;
+}
+.ht40 {
+	height:40px;
+}
+.ht80 {
+	height:80px;
+}
+.ht240 {
+	height:240px;
+}
+.fl {
+	float:left;
+}
+.fr {
+	float:right;
+}
+.cb {
+	clear:both;
+}
+.pink {
+	color:#fc9078;
+}
+.choose-pic {
+	background:#fc9078;
+	width:22%;
+	height:28px;
+}
+input[type="file"] {
+	-webkit-appearance:none;
+	appearance:none;
+	outline:none;
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+	border-radius:0;
+}
+.switch {
+	position: relative;
+	margin: 8px auto;
+	height: 26px;
+	width: 120px;
+	background: rgba(0, 0, 0, 0.25);
+	border-radius: 3px;
+	-webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+	box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+	float:left;
+}
+.switch-label {
+	position: relative;
+	z-index: 2;
+	float: left;
+	width: 58px;
+	line-height: 26px;
+	font-size: 11px;
+	color: rgba(255, 255, 255, 0.35);
+	text-align: center;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.45);
+	cursor: pointer;
+}
+.switch-label:active {
+	font-weight: bold;
+}
+.switch-label-off {
+	padding-left: 2px;
+}
+.switch-label-on {
+	padding-right: 2px;
+}
+.switch-input {
+	display: block; opacity:0; position:absolute;
+}
+.switch-input:checked + .switch-label {
+	font-weight: bold;
+	color: rgba(0, 0, 0, 0.65);
+	text-shadow: 0 1px rgba(255, 255, 255, 0.25);
+	-webkit-transition: 0.15s ease-out;
+	-moz-transition: 0.15s ease-out;
+	-o-transition: 0.15s ease-out;
+	transition: 0.15s ease-out;
+}
+.switch-input:checked + .switch-label-on ~ .switch-selection {
+	left: 60px;
+}
+.switch-selection {
+	display: block;
+	position: absolute;
+	z-index: 1;
+	top: 2px;
+	left: 2px;
+	width: 58px;
+	height: 22px;
+	background: #65bd63;
+	border-radius: 3px;
+	background-image: -webkit-linear-gradient(top, #9dd993, #65bd63);
+	background-image: -moz-linear-gradient(top, #9dd993, #65bd63);
+	background-image: -o-linear-gradient(top, #9dd993, #65bd63);
+	background-image: linear-gradient(to bottom, #9dd993, #65bd63);
+	-webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.5), 0 0 2px rgba(0, 0, 0, 0.2);
+	box-shadow: inset 0 1px rgba(255, 255, 255, 0.5), 0 0 2px rgba(0, 0, 0, 0.2);
+	-webkit-transition: left 0.15s ease-out;
+	-moz-transition: left 0.15s ease-out;
+	-o-transition: left 0.15s ease-out;
+	transition: left 0.15s ease-out;
+}
+.box {
+	position:relative;
+	float:left;
+}
+input.uploadFile {
+	position:absolute;
+	right:0px;
+	top:0px;
+	opacity:0;
+	filter:alpha(opacity=0);
+	cursor:pointer;
+	width:100%;
+	height:36px;
+	overflow: hidden;
+}
+input.textbox {
+	float:left;
+	padding:5px;
+	color:#999;
+	height:24px;
+	line-height:24px;
+	border:1px #ccc solid;
+	margin-right:4px;
+	width:90%;
+}
+a.link {
+	display:inline-block;
+	padding:4px 16px;
+	color:#fff;
+	font:14px "微软雅黑", Verdana, Geneva, sans-serif;
+	cursor:pointer;
+	background-color:#fc9078;
+	line-height:28px;
+	text-decoration:none;
+	position:absolute;
+	right:-2px;
+	top:0px;
+}
+.p3 {
+	height:50px;
+	padding-top:40px;
+	width:100%;
+	clear:both;
+	position:relative;
+}
+.but {
+	color:#fff;
+	background:#fc9078;
+	width:50%;
+	position:absolute;
+	left:25%;
+	border:none;
+	height:50px;
+	font-size:14px;
+	font-family:'微软雅黑';
+	border-radius:2px;
+	text-align:center;
+	cursor:pointer;
+	clear:both;
+}
+.p4 {
+	height:60px;
+	width:100%;
+	padding-top:100px;
+}
+footer {
+	width:100%;
+	line-height:60px;
+	height:60px;
+}
+footer span {
+	line-height:60px;
+	display:block;
+	text-align:center;
+	color:#7f7e7e;
+}
+</style>
+  </head>
+  <body>
+    <nav class="nav-collapse">
+      <ul>
+        <li><a style="background-color:#2c7"><b>帮帮</b><span onClick="document.location='zhongchou.html';">众筹</span><span class="nop">|</span><span>资源交换</span><span class="nop">|</span><span>跳蚤市场</span><span class="nop">|</span><span onClick="document.location='zaixianqiuzhu.html';">求助</span></a></li>
+        <li><a style="background-color:#2c7"><b>资讯</b><span onClick="document.location='xiaoyuanhuodong.html';">活动</span><span class="nop">|</span><span>毕业寄语</span><span class="nop">|</span><span onClick="document.location='tongzhi.html';">班级管理</span><span class="nop">|</span><span onClick="document.location='jianzhi.html';">兼职</span></a></li>
+        <li><a style="background-color:#2c7"><b>个人</b><span onClick="document.location='zhuce.html';">注册</span><span class="nop">|</span><span>我有话说</span><span class="nop">|</span><span>奋斗轨迹</span><span class="nop">|</span><span>遇见</span></a></li>
+      </ul>
+    </nav>
+    
+    <div id="main">
+      <h1 class="h1-title">　　校园众筹</h1>
+      <!--<h4 class="h2-title">Join us</h4>-->
+      <div id="bg-swap"></div>
+      <div id="con">
+         <div class="p1">
+             <ul>
+                 <li class="light san1"><a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;项目信息</a><span> </span></li>
+                 <li class="san2"><a>&nbsp;&nbsp;&nbsp;&nbsp;回报设置</a><span> </span></li>
+                 <li class="san2"><a>&nbsp;&nbsp;&nbsp;&nbsp;确认信息</a></li>
+             </ul>
+         </div>
+         <div class="p2">
+             <h3>&nbsp;&nbsp;<b><big>发起项目</big></b></h3>
+             <div class="line"></div>
+             <form action="#" method="post" onsubmit="return toVaild()">
+             <div class="form">             
+                 <div class="box">
+                     <div class="lineh40 wt24 fl">项目名称：</div>
+                     <div class="wt76 fr"><input type="text" id="zc-name" class=" ht40 wt100"></div>
+                 </div>
+                 <div class="br20 cb"></div>
+                 <div class="box">
+                     <div class="lineh40 wt24 fl">项目简介：</div>
+                     <div class="wt76 fr"><textarea type="text" id="zc-jianjie" class="ht80 wt100"></textarea></div>
+                 </div>
+                 <div class="br20 cb"></div>
+                 <div class="box">
+                     <div class="lineh40 wt24 fl">筹集内容：</div>
+                     <div class="wt76 fr">
+                             <div class="switch">
+                               <input type="radio" class="switch-input" name="view" value="money" id="money" checked>
+                               <label for="money" class="switch-label switch-label-off">资金</label>
+                               <input type="radio" class="switch-input" name="view" value="persen" id="persen">
+                               <label for="persen" class="switch-label switch-label-on">人员</label>
+                               <span class="switch-selection"></span>
+                            </div>
+                     </div>
+                 </div>
+                 <div class="br20 cb"></div>
+                 <div class="box">
+                     <div class="lineh40 wt24 fl">筹集数量：</div>
+                     <div class="wt76 fr"><input type="text" id="zc-shuliang" class=" ht40 wt100" placeholder="资金默认单位为元,人员默认单位为个"  style="imeMode:disabled;" maxlength="6" onkeyup="value=value.replace(/[^\d]/g,'') " 
+      onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" ></div>
+                 </div>
+                 <div class="br20 cb"></div>
+                 <div class="box">
+                     <div class="lineh40 wt24 fl">筹集上限：</div>
+                     <div class="wt76 fr"><input type="text" id="zc-shangxian" class=" ht40 wt55" placeholder="不少于100%" style="imeMode:disabled;" maxlength="4"  onkeyup="value=value.replace(/[^\d]/g,'') " 
+      onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" ><big>%</big><span class="pink">&nbsp;填0是无限大</span></div>
+                 </div>
+                 <div class="br20 cb"></div>
+                 <div class="box">
+                     <div class="lineh40 wt24 fl">筹集天数：</div>
+                     <div class="wt76 fr"><input type="text" id="zc-tianshu" class=" ht40 wt100" placeholder="10~60天" style="imeMode:disabled;" maxlength="2"  onkeyup="value=value.replace(/[^\d]/g,'') " 
+      onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" ></div>
+                 </div>
+                 <div class="br20 cb"></div>
+                 <div class="box">
+                     <div class="lineh40 wt24 fl">项目图片：</div>
+                     <div class="wt76 fr" style="position:relative;">
+                         <input type="text" name="copyFile"  class="textbox ht40 wt76" placeholder="支持jpg、jpeg、png、gif格式，大小不超过2M。建议尺寸：640x300px">
+                         <a href="javascript:void(0);"  class="link">浏&nbsp;览</a>
+                         <input type="file" id="choose-file" class="uploadFile" name="upload" accept="image/png,image/gif,image/jpg,image/jpeg"  onchange="getFile(this,'copyFile')" />
+                    </div>
+                 </div>
+                 <div class="br20 cb"></div>
+                 <div class="box">
+                     <div class="lineh40 wt24 fl">项目详情：</div>
+                     <div class="wt100 fr"><textarea id="zc-xiangqing" class="ht240 wt100"></textarea></div>
+                 </div>
+                 <div class="br20 cb"></div>
+        <script type="text/javascript">
+			function getFile(obj,inputName){
+				var file_name = $(obj).val();
+				$("input[name='"+inputName+"']").val(file_name);
+			}
+        </script>
+             </div>
+         </div>
+         <div class="p3"><input type="submit" value="下一步" class="but" ></div>
+         </form>
+         <div class="p4">
+             <div class="line" style="background:#d2d2d2;">
+             <footer><span>2015&nbsp;&copy;&nbsp;&nbsp;湖理帮帮微信平台</span></footer>
+         </div>
+      </div>
+    </div>
+<!-------------------nav-js-------------------->
+    <script>
+      var navigation = responsiveNav(".nav-collapse", {
+        animate: true,                    // Boolean: Use CSS3 transitions, true or false
+        transition: 284,                  // Integer: Speed of the transition, in milliseconds
+        label: "Menu",                    // String: Label for the navigation toggle
+        insert: "after",                  // String: Insert the toggle before or after the navigation
+        customToggle: "",                 // Selector: Specify the ID of a custom toggle
+        closeOnNavClick: false,           // Boolean: Close the navigation when one of the links are clicked
+        openPos: "relative",              // String: Position of the opened nav, relative or static
+        navClass: "nav-collapse",         // String: Default CSS class. If changed, you need to edit the CSS too!
+        navActiveClass: "js-nav-active",  // String: Class that is added to <html> element when nav is active
+        jsClass: "js",                    // String: 'JS enabled' class which is added to <html> element
+        init: function(){},               // Function: Init callback
+        open: function(){},               // Function: Open callback
+        close: function(){}               // Function: Close callback
+      });
+    </script>
+<!-------------------校验表单-js-------------->
+<script type="text/javascript">    
+             function toVaild(){
+               if (document.getElementById("zc-name").value.length==0) {
+               alert("请填写项目名称。");
+			   document.getElementById("zc-name").focus();
+			   return false;
+				 				 }
+								 else{
+								 
+               if (document.getElementById("zc-jianjie").value.length==0) {
+               alert("请填写项目简介。");
+			   document.getElementById("zc-jianjie").focus();
+			   return false;
+				 				 }
+								 else{
+               if (document.getElementById("zc-shuliang").value.length==0) {
+               alert("请填写筹集数量。");
+			   document.getElementById("zc-shuliang").focus();
+			   return false;
+				 				 }
+								 else{
+               if (document.getElementById("zc-shangxian").value.length==0) {
+               alert("请填写筹集上限。");
+			   document.getElementById("zc-shangxian").focus();
+			   return false;
+				 				 }
+								 else{
+               if (document.getElementById("zc-tianshu").value.length==0) {
+               alert("请填写筹集天数。");
+			   document.getElementById("zc-tianshu").focus();
+			   return false;
+				 				 }
+								 else{
+               if (document.getElementById("choose-file").value.length==0) {
+               alert("请选择一张图片。");
+			   return false;
+				 				 }
+								 else{
+               if (document.getElementById("zc-xiangqing").value.length==0) {
+               alert("请填写项目详情。");
+			   document.getElementById("zc-xiangqing").focus();
+			   return false;
+
+				 				 }
+								 }}}}}}
+			 }
+</script>
+  </body>
+</html>

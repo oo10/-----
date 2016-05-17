@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <title>奋斗轨迹</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />    
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />    
+    <meta content="telephone=no" name="format-detection" />
+    <link rel="stylesheet" href="css/responsive-nav.css">
+    <link rel="stylesheet" href="css/nav-styles.css">
+    <script src="js/responsive-nav.js"></script>
+    <script src="js/jquery.min.js"></script>
+<!--------------------web整屏-js-------------->
+    <script type='text/javascript'>
+      window.onload=function(){
+      map_width=document.body.clientWidth;//获取body宽度
+      map_height=document.documentElement.clientHeight;//获取页面可见高度
+    //  alert(map_width);
+    //  alert(map_height);
+      document.getElementById('con').style.height=map_height+'px';
+      }
+      $(function() { 
+      map_width=document.body.clientWidth;//获取body宽度
+      map_height=document.documentElement.clientHeight;//获取页面可见高度
+      if(map_width>map_height){
+      $(".banner").removeClass("vmin1").addClass("vmax1");
+      $(".text").removeClass("vmin1").addClass("vmax1");
+      }});
+    </script>
+<style type="text/css">
+body { overflow-x:hidden;}
+#con { text-align:center;}
+.banner { background:url(images/fendou.png); background-size:cover;}
+.vmin1{ width:100vmin; height:62.8vmin;}
+.vmax1{ width:100vmax; height:62.8vmax;}
+.text { background:url(images/fendou1.png); background-size:cover; margin-top:6px;}
+.vmin2{ width:100vmin; height:43.75vmin;}
+.vmax2{ width:100vmax; height:43.75vmax;}
+button { width:44.68%; height:40px; background:#7ca5d1; border:none; outline:none; margin-top:4px;}
+button a { text-decoration:none; color:#FFF; display:block; cursor:pointer;text-align:center; line-height:40px;}
+</style>
+
+</head>
+
+<body>
+    <div id="main">
+      <div id="con">
+          <div class="banner vmin1"></div>
+          <div class="text vmin2"></div>
+          <button><a href="tel:15580107144">联系我们</a></button>
+          <button><a href="fendou/">查看案例</a></button>
+      </div>
+    </div>
+
+</body>
+</html>

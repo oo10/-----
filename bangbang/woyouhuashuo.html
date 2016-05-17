@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>我有话说</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />    
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />    
+    <meta content="telephone=no" name="format-detection" />
+    <script src="js/jquery.min.js"></script>
+<style>
+body { overflow-x:hidden;
+	  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+	font-size:14px;
+	font-family:Arial, '微软雅黑', sans-serif;
+	padding:0; margin:0;
+}
+.textbox { width:100%; height:120px; border-bottom:1px dotted #CFCFCF; border-top:1px dotted #CFCFCF; margin:0 auto; -webkit-box-shadow:10px #CFCFCF;}
+textarea {
+	padding:5px;
+	width:95%;
+	height:90%;
+	max-height:260px;
+	text-align:left;
+	word-break:break-all;
+	margin:0 auto;
+	border:none;
+	outline:none;
+	}
+.button-box { width:100%;}
+.btn{
+	color:#FFF;
+	background:#5cb85c;
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 4px;
+	position:relative;
+    left:50%;
+	margin-left:-60px;
+	margin-top:20px;
+}
+.bg { width:100vmin; height:64vmin; background-image:url(images/advice.jpg); background-size:cover;}
+.bgmax { width:100vmax; height:64vmax; background-image:url(images/advice.jpg); background-size:cover;}
+</style>
+<!--------------------web整屏-js-------------->
+    <script type='text/javascript'>
+$(function() { 
+      map_width=document.body.clientWidth;//获取body宽度
+      map_height=document.documentElement.clientHeight;//获取页面可见高度
+if(map_width>map_height){
+$(".bg").removeClass("bg").addClass("bgmax");
+}
+	});
+	
+document.body.addEventListener('touchstart', function () { });
+function check(){ 
+
+if (document.getElementById("advice").value.length==0) {
+alert("您还没输内容呢~");
+document.getElementById("advice").focus();
+return false;
+}} 
+
+</script>
+
+</head>
+
+<body>
+ <div class="bg"></div>
+ <form action="#" onSubmit="check()">
+ <div class="textbox">
+ <textarea required id="advice"  style="font-size:14px;" placeholder=" 写下您想对我们说的话吧~" maxlength="100"></textarea>    
+ </div>
+ <div class="button-box">
+ <button type="submit" class="btn" style="width:120px;" >提交</button>
+ </div>
+ </div>
+</body>
+</html>

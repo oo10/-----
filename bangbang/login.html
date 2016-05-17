@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh"><head>
+    <meta charset="utf-8">
+    <title>登录</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />    
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />    
+    <meta content="telephone=no" name="format-detection" />
+    <link rel="stylesheet" href="css/responsive-nav.css">
+    <link rel="stylesheet" href="css/nav-styles.css">
+    <script src="js/responsive-nav.js"></script>
+<!--------------------web整屏-js-------------->
+    <script type='text/javascript'>
+      window.onload=function(){
+      map_width=document.body.clientWidth;//获取body宽度
+      map_height=document.documentElement.clientHeight;//获取页面可见高度
+    //  alert(map_width);
+    //  alert(map_height);
+      document.getElementById('bg-swap').style.height=map_height+'px';
+      document.getElementById('con').style.height=map_height+'px';
+      }
+</script>
+<script language="javascript"> 
+document.body.addEventListener('touchstart', function () { });
+function check(){ 
+
+if (document.getElementById("name").value.length==0) {
+alert("请输入用户名");
+document.getElementById("name").focus();
+return false;
+}
+if (document.getElementById("pas").value.length==0) {
+alert("请输入密码");
+document.getElementById("pas").focus();
+return false;
+}} 
+</script> 
+<style>
+body { }
+#con { width:68.9vmin; margin:0 auto; font-size:16px;}
+.h1-title {background:#b19bf0;}
+.br { height:14.06vmin; max-height:50px;}
+.topBanner {   width:68.9vmin; height:18.75vmin; max-width:440px; max-height:120px; background-image:url(images/bangbang.png); background-size:cover;}
+.mgt20 { margin-top:20px;}
+.left { width:17.225vmin; max-width:110px;   height:40px; float:left;}
+.left span { text-align:center; line-height:40px; display:block;}
+.right { width:50vmin; max-width:328px;  height:38px; border:1px solid #989898; position:relative; float:right;}
+.right input {  border:none; outline:none; -webkit-appearance:none; height:38px; width:50vmin; max-width:328px; position:absolute; top:0;left:0; background:transparent;}
+.login button { background:none;outline:none; appearance:none; border:none; float:left; width:34.45vmin; max-width:220px; padding:0; margin:20px 0; cursor:pointer;}
+.login button a { max-width:220px; display:block; width:34.45vmin;  height:40px; color:#FFF; font-size:14px; line-height:40px; text-decoration:none;}
+.loginBg { width:68.9vmin; height:91.2924vmin; max-width:220px; max-height:291.5px; background-image:url(images/login-bg.png); background-size:cover; position:absolute; bottom:0; left:0; right:0; margin:auto; z-index:-1;}
+</style>
+  </head>
+  <body>
+    <div id="main">
+      <div id="bg-swap" style="background:none;"></div>
+      <div id="con" class="login">
+          <div class="br"></div>
+          <div class="topBanner"></div>
+          <form action="#" onSubmit="check()">
+              <div class="left mgt20"><span>用户名</span></div>
+              <div class="right mgt20" style="border-bottom-color:rgba(255,255,255,0.1);"><input type="text" id="name" maxlength="20" placeholder="请输入用户名" ></div>
+              <div class="left"><span>密　码</span></div>
+              <div class="right"><input type="text" id="pas" maxlength="20" placeholder="请输入密码" ></div>
+              <button type="submit"><a style="background:#ff6a6a;">登录</a></button>
+              <button type="button"><a style="background:#52d4b8;" href="zhuce.html">注册</a></button>
+          </form>
+          <div class="loginBg"></div>
+      </div>
+    </div>
+  </body>
+</html>

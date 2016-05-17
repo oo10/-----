@@ -1,0 +1,260 @@
+@charset "UTF-8";
+@font-face {
+    font-family: "华文彩云";
+    src: url("../fonts/../fonts/华文彩云.eot"); /* IE9 */
+    src: url("../fonts/华文彩云.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    
+    url("../fonts/华文彩云.woff") format("woff"), /* chrome、firefox */
+    url("../fonts/华文彩云.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+ */
+    
+    url("../fonts/华文彩云.svg#华文彩云") format("svg"); /* iOS 4.1- */
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: "AlphaSmart3000";
+    src: url("../fonts/AlphaSmart3000.eot"); /* IE9 */
+    src: url("../fonts/AlphaSmart3000.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    
+    url("../fonts/AlphaSmart3000.woff") format("woff"), /* chrome、firefox */
+    url("../fonts/AlphaSmart3000.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+ */
+    
+    url("../fonts/AlphaSmart3000.svg#AlphaSmart3000") format("svg"); /* iOS 4.1- */
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: "娘气屌丝帮";
+    src: url("../fonts/娘气屌丝帮.eot"); /* IE9 */
+    src: url("../fonts/娘气屌丝帮.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    
+    url("../fonts/娘气屌丝帮.woff") format("woff"), /* chrome、firefox */
+    url("../fonts/娘气屌丝帮.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+ */
+    
+    url("../fonts/娘气屌丝帮.svg#娘气屌丝帮") format("svg"); /* iOS 4.1- */
+    font-style: normal;
+    font-weight: normal;
+}
+
+
+
+body {
+	  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+	font-size:14px;
+	font-family:Arial, '微软雅黑', sans-serif;
+}
+a, textarea, button, input, ul, li, div, span, td, select {
+	-webkit-appearance: none;appearance: none;
+}
+
+#bg-swap {
+	background:url(../images/bg.jpeg) center center;
+	background-size:cover;
+	width:100%;
+	position:fixed;
+	top:0;
+	z-index:-1000;
+}
+#con {
+	width:100%;
+	word-break:break-all;
+}
+.nav-collapse ul li span { 
+    float:right;
+	margin:0 4px;
+	padding:0 4px;
+	display:block;
+	cursor:pointer;
+	height:1.5em
+}
+.nav-collapse ul li span.nop {
+	padding:0;
+	margin:0;
+}
+.h1-title {
+	font-family:华文彩云;
+	text-align:center;
+	line-height:55px;
+	color:#FFF;
+	letter-spacing:2px;
+}
+/*.h2-title {
+	font-family:Aria;
+	text-align:center;
+	line-height:55px;
+	color:#FFF;
+	letter-spacing:2px;
+}*/
+
+/* ------------------------------------------
+  RESET
+--------------------------------------------- */
+
+body, div,
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, dl, dt, dd, ol, ul, li, hr,
+fieldset, form, label, legend, th, td,
+article, aside, figure, footer, header, hgroup, menu, nav, section,
+summary, hgroup {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+a:active,
+a:hover {
+  outline: 0;
+}
+
+@-webkit-viewport { width: device-width; }
+@-moz-viewport { width: device-width; }
+@-ms-viewport { width: device-width; }
+@-o-viewport { width: device-width; }
+@viewport { width: device-width; }
+
+
+/* ------------------------------------------
+  BASE DEMO STYLES
+--------------------------------------------- */
+
+section {
+  border-bottom: 1px solid #999;
+  float: left;
+  width: 100%;
+  height: 800px;
+}
+
+
+/* ------------------------------------------
+  NAVIGATION STYLES
+  (+ responsive-nav.css file is loaded in the <head>)
+--------------------------------------------- */
+
+.fixed {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.nav-collapse,
+.nav-collapse * {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.nav-collapse,
+.nav-collapse ul {
+  list-style: none;
+  width: 100%;
+  float: left;
+}
+
+.nav-collapse li {
+  float: left;
+  width: 100%;
+}
+
+@media screen and (min-width: 40em) {
+  .nav-collapse li {
+ /*   width: 25%;
+    *width: 24.9%; /* IE7 Hack */
+ /*   _width: 19%; /* IE6 Hack */
+    width: 33.3%;
+    *width: 33.2%; /* IE7 Hack */
+    _width: 32%; /* IE6 Hack */
+  }
+}
+
+.nav-collapse a {
+  color: #fff;
+  text-decoration: none;
+  width: 100%;
+  background: /*#f4421a*/#f19a16;
+  border-bottom: 1px solid white;
+  padding: 0.9em 1em;
+  float: left;
+}
+
+@media screen and (min-width: 40em) {
+  .nav-collapse a {
+    margin: 0;
+    padding: 1em;
+    float: left;
+    text-align: center;
+    border-bottom: 0;
+    border-right: 1px solid white;
+  }
+}
+
+.nav-collapse ul ul a {
+  background: #ca3716;
+  padding-left: 2em;
+}
+
+@media screen and (min-width: 40em) {
+  .nav-collapse ul ul a {
+    display: none;
+  }
+}
+
+
+/* ------------------------------------------
+  NAV TOGGLE STYLES
+--------------------------------------------- */
+
+@font-face {
+  font-family: "responsivenav";
+  src:url("../icons/responsivenav.eot");
+  src:url("../icons/responsivenav.eot?#iefix") format("embedded-opentype"),
+    url("../icons/responsivenav.ttf") format("truetype"),
+    url("../icons/responsivenav.woff") format("woff"),
+    url("../icons/responsivenav.svg#responsivenav") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.nav-toggle {
+  position: fixed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  text-decoration: none;
+  text-indent: -999px;
+  position: relative;
+  overflow: hidden;
+  width: 70px;
+  height: 55px;
+  float: right;
+}
+
+.nav-toggle:before {
+  color:#FFF/*#f19a16 #2c7*/;
+  font-family: "responsivenav", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  font-size: 28px;
+  text-transform: none;
+  position: absolute;
+  content: "≡";
+  text-indent: 0;
+  text-align: center;
+  line-height: 55px;
+  speak: none;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.nav-toggle.active::before {
+  font-size: 24px;
+  content:"x";
+}

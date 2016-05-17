@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <title>资讯-班级通知</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />    
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />    
+    <meta content="telephone=no" name="format-detection" />
+    <link rel="stylesheet" href="css/responsive-nav.css">
+    <link rel="stylesheet" href="css/nav-styles.css">
+    <script src="js/responsive-nav.js"></script>
+<style type="text/css">
+body { height:100%;}
+.h1-title{background:#2c7;}
+.fl { float:left;}
+.fr { float:right;}
+footer {    width:100%;
+            height:60px;
+            background-color: #ff8a40;
+            position: fixed;
+            bottom: 0px;
+            overflow-x: hidden;
+            overflow-y: auto;
+		    z-index:99;
+}
+footer li { float:left; width:33.33%; text-align:center; list-style:none;}
+footer li a { display:block;
+             line-height: 60px;
+            vertical-align: center;
+            font-family: 微软雅黑;
+            font-size:16px;
+            color: white;
+			text-decoration:none;}
+footer li a img { height:16px; border:none;}
+footer li a { text-decoration:none;}
+.note-box { position:relative; width:96%; margin-left:2%; height:auto; float:left; margin-top:10%;}
+.note-box .note-bg img { width:100%; float:left;}
+.note-box .title { width:100%; position:absolute; top:20%; z-index:2;}
+.note-box .title h3 { text-align:center;}
+.note-box .article { width:88%; position:absolute; top:35%; z-index:2; left:6%; text-align:justify;}
+.note-box .article p{ line-height:22px; letter-spacing:2px; padding:0 5px;}
+.note-box .article .time { float:right; margin-top:5%;}
+.note-box .control { width:30%; height:10%; position:absolute; right:8%; bottom:12%;}
+</style>
+<!--------------------web整屏-js-------------->
+    <script type='text/javascript'>
+      window.onload=function(){
+      map_width=document.body.clientWidth;//获取body宽度
+      map_height=document.documentElement.clientHeight;//获取页面可见高度
+    //  alert(map_width);
+    //  alert(map_height);
+      document.getElementById('bg-swap').style.height=map_height+'px';
+      document.getElementById('con').style.height=map_height-55+'px';
+      }
+    </script>
+</head>
+
+<body>
+    <nav class="nav-collapse">
+      <ul>
+        <li><a style="background-color:#2c7"><b>帮帮</b><span onClick="document.location='zhongchou.html';">众筹</span><span class="nop">|</span><span>资源交换</span><span class="nop">|</span><span>跳蚤市场</span><span class="nop">|</span><span onClick="document.location='zaixianqiuzhu.html';">求助</span></a></li>
+        <li><a style="background-color:#2c7"><b>资讯</b><span onClick="document.location='xiaoyuanhuodong.html';">活动</span><span class="nop">|</span><span>毕业寄语</span><span class="nop">|</span><span onClick="document.location='tongzhi.html';">班级管理</span><span class="nop">|</span><span onClick="document.location='jianzhi.html';">兼职</span></a></li>
+        <li><a style="background-color:#2c7"><b>个人</b><span onClick="document.location='zhuce.html';">注册</span><span class="nop">|</span><span>我有话说</span><span class="nop">|</span><span>奋斗轨迹</span><span class="nop">|</span><span>遇见</span></a></li>
+      </ul>
+    </nav>
+    <div id="main">
+      <h1 class="h1-title">　　班级通知</h1>
+      <div id="con">
+          <div class="note-box">
+              <div class="note-bg"><img src="images/attentionBack.png"></div>
+              <div class="title"><h3>通知</h3></div>
+              <div class="article">
+                  <p>　　今晚在计算机学院（5栋）开学期期末测评动员大会，希望大家不要迟到。</p>
+                  <p class="time">2015-06-04</p>
+              </div>
+              <div class="control">
+                  <div class="button_front fl"><a href="#"><img src="images/front.png" height="30px;"></a>&nbsp;&nbsp;</div>
+                  <div class="button_next fr"><a href="#"><img src="images/next.png" height="30px;"></a></section></div>
+              </div>
+          </div>
+          
+          <footer>
+                <ul>
+                    <li><a href="#"><img src="images/icon_class_tongzhi.png">&nbsp;通知</a></li>
+                    <li><a href="#"><img src="images/icon_class_vote.png">&nbsp;投票</a></li>
+                    <li><a href="#"><img src="images/icon_class_dianming.png">&nbsp;点名</a></li>
+                </ul>
+          </footer>
+      </div>
+    </div>
+<!-------------------nav-js-------------------->
+    <script>
+      var navigation = responsiveNav(".nav-collapse", {
+        animate: true,                    // Boolean: Use CSS3 transitions, true or false
+        transition: 284,                  // Integer: Speed of the transition, in milliseconds
+        label: "Menu",                    // String: Label for the navigation toggle
+        insert: "after",                  // String: Insert the toggle before or after the navigation
+        customToggle: "",                 // Selector: Specify the ID of a custom toggle
+        closeOnNavClick: false,           // Boolean: Close the navigation when one of the links are clicked
+        openPos: "relative",              // String: Position of the opened nav, relative or static
+        navClass: "nav-collapse",         // String: Default CSS class. If changed, you need to edit the CSS too!
+        navActiveClass: "js-nav-active",  // String: Class that is added to <html> element when nav is active
+        jsClass: "js",                    // String: 'JS enabled' class which is added to <html> element
+        init: function(){},               // Function: Init callback
+        open: function(){},               // Function: Open callback
+        close: function(){}               // Function: Close callback
+      });
+    </script>
+
+</body>
+</html>

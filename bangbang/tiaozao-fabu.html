@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh"><head>
+    <meta charset="utf-8">
+    <title>帮帮-跳蚤市场</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />    
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />    
+    <meta content="telephone=no" name="format-detection" />
+    <link rel="stylesheet" href="css/responsive-nav.css">
+    <link rel="stylesheet" href="css/nav-styles.css">
+    <script src="js/responsive-nav.js"></script>
+    <script src="js/jquery.min.js"></script>
+
+<!--------------------web整屏-js-------------->
+<script type='text/javascript'>
+      window.onload=function(){
+      map_width=document.body.clientWidth;//获取body宽度
+      map_height=document.documentElement.clientHeight;//获取页面可见高度
+    //  alert(map_width);
+    //  alert(map_height);
+      document.getElementById('bg-swap').style.height=map_height+'px';
+      document.getElementById('con').style.height=map_height-55+'px';
+      }
+</script>
+<script>
+document.body.addEventListener('touchstart', function () { });//for iso touch----hover
+</script>
+<style>
+body { background:#FFF; overflow-x:hidden;}
+.h1-title {
+	background:#2c7;
+}
+#bg-swap{ background:none;}
+.t1 { width:100vmin; height:66.3vmin; position:relative; background:#CCC;}
+img { margin:0; padding:0;}
+.upload-button { width:20vmin; height:20vmin;background-size: 100% auto;  background-image:url(images/tiaozao.png); top:33%; position:absolute; margin:auto; left:0; right:0;}
+.box input,textarea { border:1px solid #D2D2D2;
+-moz-box-shadow:2px 2px 5px #D2D2D2; -webkit-box-shadow:2px 2px 5px #D2D2D2; box-shadow:2px 2px 5px #D2D2D2;}
+input,textarea  { padding-left:5px;}
+input.uploadFile {
+	position:absolute;
+	right:0px;
+	top:33%;
+	opacity:0;
+	filter:alpha(opacity=0);
+	cursor:pointer;
+ margin:auto; left:0; right:0;	overflow: hidden;
+	height:20vmin;
+	width:20vmin;
+}
+input.copy {
+	position:absolute;
+	bottom:4px;
+	left:0;
+	color:#999;
+	height:24px;
+	line-height:24px;
+	border:none;
+	border-bottom:1px #FFF dotted;
+	width:96%;
+	overflow:hidden;
+	text-align:center;
+}
+
+.box { width:94%; padding-left:4px;}
+
+.lineh40 {
+	line-height:40px;
+}
+.wt100 {
+	width:100%;
+}
+.wt24 {
+	width:20%;
+}
+.wt76 {
+	width:76%;
+}
+.wt55 {
+	width:50%;
+}
+.ht40 {
+	height:36px;
+}
+.ht80 {
+	height:80px;
+}
+.ht240 {
+	height:240px;
+}
+.fl {
+	float:left;
+}
+.fr {
+	float:right;
+}
+.cb {
+	clear:both;
+}
+.mt20 { margin-top:20px;}
+.br20 {
+	height:20px;
+	width:100%;
+	float:left;
+}
+.br5 {
+	height:5px;
+	width:100%;
+	float:left;
+}
+
+.t3 {
+	height:90px;
+	width:100%;
+	position:relative;
+	float:left;
+}
+.but {
+	color:#fff;
+	background:#f19a16;
+	border:1px solid #f19a16;
+	width:50%;
+	height:40px;
+	font-size:14px;
+	font-family:'微软雅黑';
+	border-radius:5px;
+	text-align:center;
+	cursor:pointer;
+    bottom:20px;
+    line-height:40px;
+	position:absolute;
+	bottom:20px;
+	left:0; right:0; margin:auto;
+}
+
+</style>
+  <head>
+  <body>
+    <nav class="nav-collapse">
+      <ul>
+        <li><a style="background-color:#2c7"><b>帮帮</b><span onClick="document.location='zhongchou.html';">众筹</span><span class="nop">|</span><span>资源交换</span><span class="nop">|</span><span>跳蚤市场</span><span class="nop">|</span><span onClick="document.location='zaixianqiuzhu.html';">求助</span></a></li>
+        <li><a style="background-color:#2c7"><b>资讯</b><span onClick="document.location='xiaoyuanhuodong.html';">活动</span><span class="nop">|</span><span>毕业寄语</span><span class="nop">|</span><span onClick="document.location='tongzhi.html';">班级管理</span><span class="nop">|</span><span onClick="document.location='jianzhi.html';">兼职</span></a></li>
+        <li><a style="background-color:#2c7"><b>个人</b><span onClick="document.location='zhuce.html';">注册</span><span class="nop">|</span><span>我有话说</span><span class="nop">|</span><span>奋斗轨迹</span><span class="nop">|</span><span>遇见</span></a></li>
+      </ul>
+    </nav>
+    
+    <div id="main">
+      <h1 class="h1-title">　　跳蚤市场</h1>
+      <!--<h4 class="h2-title">Join us</h4>-->
+      <div id="bg-swap"></div>
+      <div class="con">
+        <form action="#" method="post" onsubmit="return check()"> 
+          <div class="t1">
+              <img src="images/tiaozao-bg.png" width="100%;">
+              <div class="upload-button" onClick="javascript:void(0);" style="cursor:pointer;"></div>
+              <input type="text" readonly name="copyFile"  class="copy" value="支持jpg、jpeg、png、gif格式，大小不超过2M。"  style="background:transparent; color:#FFF;">
+              <input type="file" id="choose-file" class="uploadFile" name="upload" accept="image/png,image/gif,image/jpg,image/jpeg"  onchange="getFile(this,'copyFile')" />
+          </div>
+          <div class="t2">
+                 <div class="br20"></div>
+                 <div class="box">
+                     <div class="lineh40 wt24 fl">宝贝标题</div>
+                     <div class="wt76 fr"><input type="text" id="tz-name" class=" ht40 wt100" placeholder="请输宝贝标题"></div>
+                 </div>
+                 <div class="br5"></div>
+                 <div class="box">
+                     <div class="lineh40 wt24 fl">宝贝描述</div>
+                     <div class="wt76 fr"><input type="text" id="tz-miaoshu" class=" ht40 wt100" placeholder="请详细输宝贝描述"></div>
+                 </div>
+                 <div class="br20"></div>
+                 <div class="box">
+                     <div class="lineh40 wt24 fl">宝贝价格</div>
+                     <div class="wt76 fr"><input type="tel" id="tz-price" class=" ht40 wt55"  style="imeMode:disabled;" maxlength="4"  onkeyup="value=value.replace(/[^\d]/g,'') " 
+      onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))" ><span>&nbsp;元</span></div>
+                 </div>
+                 <div class="br5"></div>
+                 <div class="box">
+                     <div class="lineh40 wt24 fl">交易地点</div>
+                     <div class="wt76 fr"><input type="text" id="tz-place" class=" ht40 wt100"></div>
+                 </div>
+                 <div class="br20"></div>
+                 <div class="box">
+                     <div class="lineh40 wt24 fl">联系电话</div>
+                     <div class="wt76 fr"><input type="tel" id="tz-phone" class=" ht40 wt100"  style="imeMode:disabled;" maxlength="11"  onkeyup="value=value.replace(/[^\d]/g,'') " 
+      onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"  placeholder="请输入手机号码"></div>
+                 </div>
+          </div>
+          <div class="t3">
+                 <input type="submit" value="发 布" class="but" >
+          </div>
+      </div>
+      </div>
+    </div>
+        <script type="text/javascript">
+			function getFile(obj,inputName){
+				var file_name = $(obj).val();
+				$("input[name='"+inputName+"']").val(file_name);
+			}
+        </script>
+<!-------------------检测-js-------------------->
+<script language="javascript"> 
+function check(){ 
+
+if (document.getElementById("choose-file").value.length==0) {
+alert("请选择一张图片。");
+return false;
+}
+if (document.getElementById("tz-miaoshu").value.length==0) {
+alert("请填写描述内容。");
+return false;
+}
+if (document.getElementById("tz-name").value.length==0) {
+alert("请填写宝贝标题。");document.getElementById("tz-name").focus();
+return false;
+}
+if (document.getElementById("tz-price").value.length==0) {
+alert("请输入价格。");document.getElementById("tz-price").focus();
+return false;
+}
+
+if (document.getElementById("tz-place").value.length==0) {
+alert("请填写交易地点。");document.getElementById("tz-place").focus();
+return false;
+}
+
+if (document.getElementById("tz-phone").value.length==0) {
+alert("请输入联系方式。");document.getElementById("tz-phone").focus();
+return false;
+}
+else{
+    if (document.getElementById("tz-phone").value.length<11) {
+    alert("请输入正确的联系方式。");document.getElementById("tz-phone").focus();
+	return false;}
+	}
+
+
+} 
+</script> 
+<!-------------------nav-js-------------------->
+    <script>
+      var navigation = responsiveNav(".nav-collapse", {
+        animate: true,                    // Boolean: Use CSS3 transitions, true or false
+        transition: 284,                  // Integer: Speed of the transition, in milliseconds
+        label: "Menu",                    // String: Label for the navigation toggle
+        insert: "after",                  // String: Insert the toggle before or after the navigation
+        customToggle: "",                 // Selector: Specify the ID of a custom toggle
+        closeOnNavClick: false,           // Boolean: Close the navigation when one of the links are clicked
+        openPos: "relative",              // String: Position of the opened nav, relative or static
+        navClass: "nav-collapse",         // String: Default CSS class. If changed, you need to edit the CSS too!
+        navActiveClass: "js-nav-active",  // String: Class that is added to <html> element when nav is active
+        jsClass: "js",                    // String: 'JS enabled' class which is added to <html> element
+        init: function(){},               // Function: Init callback
+        open: function(){},               // Function: Open callback
+        close: function(){}               // Function: Close callback
+      });
+    </script>
+  </body>
+</html>

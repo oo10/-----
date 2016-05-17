@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh"><head>
+    <meta charset="utf-8">
+    <title>帮帮-跳蚤市场</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />    
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />    
+    <meta content="telephone=no" name="format-detection" />
+    <link rel="stylesheet" href="css/responsive-nav.css">
+    <link rel="stylesheet" href="css/nav-styles.css">
+    <script src="js/responsive-nav.js"></script>
+    <script src="js/jquery.min.js"></script>
+
+<!--------------------web整屏-js-------------->
+    <script type='text/javascript'>
+      window.onload=function(){
+      map_width=document.body.clientWidth;//获取body宽度
+      map_height=document.documentElement.clientHeight;//获取页面可见高度
+    //  alert(map_width);
+    //  alert(map_height);
+      document.getElementById('bg').style.height=map_height+'px';
+      document.getElementById('con').style.height=map_height-55+'px';
+      }
+
+    </script>
+<script>
+document.body.addEventListener('touchstart', function () { });//for iso touch----hover
+</script>
+<style>
+body { background:#FFF; overflow-x:hidden;}
+.h1-title {
+	background:#2c7;
+}
+.con { width:96%; margin:0 auto; background:#FFF;}
+.t1 { margin-top:80px;}
+.t3 {
+	height:80px;
+	width:100%;
+	float:left;
+	position:relative;
+	
+}
+.but {
+	color:#fff;
+	background:#f19a16;
+	border:1px solid #f19a16;
+	width:50%;
+	height:40px;
+	font-size:14px;
+	font-family:'微软雅黑';
+	border-radius:5px;
+	text-align:center;
+	cursor:pointer;
+    line-height:40px;
+	left:25%;
+	top:20px;
+	position:absolute;
+
+}
+.box { margin-top:20px; border:1px solid #D2D2D2;  height:100px; width:100%; position:relative;-moz-box-shadow:4px 4px 8px #D2D2D2; -webkit-box-shadow:4px 4px 8px #D2D2D2; box-shadow:4px 4px 8px #D2D2D2; background:#FFF; position:relative;} 
+.box .pic { height:100px; width:120px; position:absolute; left:0; top:0;  background-size:cover;}
+.box .right { position:absolute; left:120px; padding-left:10px; line-height:22px; letter-spacing:1px;}
+.box .right .title { height:40px;}
+.box .right .title span { text-align:left; text-overflow: -o-ellipsis-lastline;overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;}
+.box .right .place { padding:8px 0;text-overflow: -o-ellipsis-lastline;overflow: hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 1;-webkit-box-orient: vertical; font-size:13px; color:#999;}
+.box .right .price span {  line-height:22px; color:#ff7201; font-weight:bold; }
+
+.box .time { color:#999; font-size:12px; position:absolute; bottom:0; right:20px;}
+</style>
+  <head>
+  <body>
+    <nav class="nav-collapse">
+      <ul>
+        <li><a style="background-color:#2c7"><b>帮帮</b><span onClick="document.location='zhongchou.html';">众筹</span><span class="nop">|</span><span>资源交换</span><span class="nop">|</span><span>跳蚤市场</span><span class="nop">|</span><span onClick="document.location='zaixianqiuzhu.html';">求助</span></a></li>
+        <li><a style="background-color:#2c7"><b>资讯</b><span onClick="document.location='xiaoyuanhuodong.html';">活动</span><span class="nop">|</span><span>毕业寄语</span><span class="nop">|</span><span onClick="document.location='tongzhi.html';">班级管理</span><span class="nop">|</span><span onClick="document.location='jianzhi.html';">兼职</span></a></li>
+        <li><a style="background-color:#2c7"><b>个人</b><span onClick="document.location='zhuce.html';">注册</span><span class="nop">|</span><span>我有话说</span><span class="nop">|</span><span>奋斗轨迹</span><span class="nop">|</span><span>遇见</span></a></li>
+      </ul>
+    </nav>
+    
+    <div id="main">
+      <h1 class="h1-title">　　跳蚤市场</h1>
+         <div class="t3">
+                 <input type="submit" value="发布二手" class="but"  onclick="window.location.href='tiaozao-fabu.html';">
+          </div>
+
+          <div class="t1">
+              <div class="box" onclick="window.location.href='tiaozao-xiangxi.html';">
+                  <div class="pic" style="background-image:url(images/tiaozao1.jpg)" ></div>
+                  <div class="right">
+                      <div class="title"><span>Apple苹果iPad mini2 Retina显示屏 mini 2代 WIFI 32GB 港版</span></div>
+                      <div class="place"><span>南院1栋</span></div>
+                      <div class="price"><span>2290</span><span>元</span></div>
+                  </div>
+                  <div class="time"><span>2015.07.15</span></div>
+
+              </div>
+              <div class="box" onclick="window.location.href='www.baidu.com';">
+                  <div class="pic" style="background-image:url(images/tiaozao2.jpg)" ></div>
+                  <div class="right">
+                      <div class="title"><span>安妮海瑟薇的挚爱，好莱坞女星的常备紧急护肤品，巴黎购入，绝对正品。</span></div>
+                      <div class="place"><span>南院</span></div>
+                      <div class="price"><span>40</span><span>元</span></div>
+                  </div>
+                  <div class="time"><span>2015.07.15</span></div>
+              </div>
+              <div class="box" onclick="window.location.href='#';">
+                  <div class="pic" style="background-image:url(images/tiaozao3.jpg)" ></div>
+                  <div class="right">
+                      <div class="title"><span>出售9成新ipod shuffle 4，无原盒</span></div>
+                      <div class="place"><span>南院1栋</span></div>
+                      <div class="price"><span>128</span><span>元</span></div>
+                  </div>
+                      <div class="time"><span>2015.07.15</span></div>
+              </div>
+              <div class="box" onclick="window.location.href='#';">
+                  <div class="pic" style="background-image:url(images/tiaozao4.jpg)" ></div>
+                  <div class="right">
+                      <div class="title"><span>死飞带前刹带锁 只骑了3天99新</span></div>
+                      <div class="place"><span>南院</span></div>
+                      <div class="price"><span>300</span><span>元</span></div>
+                  </div>
+                      <div class="time"><span>2015.07.15</span></div>
+              </div>
+              <div class="box" onclick="window.location.href='#';">
+                  <div class="pic" style="background-image:url(images/tiaozao5.jpg)" ></div>
+                  <div class="right">
+                      <div class="title"><span>忍痛转忍痛转忍痛转！超大只蓝胖子哆啦A梦毛绒公仔！</span></div>
+                      <div class="place"><span>东院</span></div>
+                      <div class="price"><span>80</span><span>元</span></div>
+                  </div>
+                      <div class="time"><span>2015.07.15</span></div>
+              </div>
+
+              <div style="height:20px; width:100%; float:left; ">
+          </div>
+
+      </div>
+      </div>
+          
+
+    </div>
+<!-------------------nav-js-------------------->
+    <script>
+      var navigation = responsiveNav(".nav-collapse", {
+        animate: true,                    // Boolean: Use CSS3 transitions, true or false
+        transition: 284,                  // Integer: Speed of the transition, in milliseconds
+        label: "Menu",                    // String: Label for the navigation toggle
+        insert: "after",                  // String: Insert the toggle before or after the navigation
+        customToggle: "",                 // Selector: Specify the ID of a custom toggle
+        closeOnNavClick: false,           // Boolean: Close the navigation when one of the links are clicked
+        openPos: "relative",              // String: Position of the opened nav, relative or static
+        navClass: "nav-collapse",         // String: Default CSS class. If changed, you need to edit the CSS too!
+        navActiveClass: "js-nav-active",  // String: Class that is added to <html> element when nav is active
+        jsClass: "js",                    // String: 'JS enabled' class which is added to <html> element
+        init: function(){},               // Function: Init callback
+        open: function(){},               // Function: Open callback
+        close: function(){}               // Function: Close callback
+      });
+    </script>
+  </body>
+</html>
