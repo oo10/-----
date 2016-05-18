@@ -21,9 +21,14 @@
     padding: 5px 20px 5px 10px;
     color: #999;
     font-size: 15px;
-    text-decoration: none;
+    text-decoration:none;
     letter-spacing: 1px;
     line-height: 1.2em;
+    transition:all .5s ease;
+}
+#contextMenu a:hover{
+    color:rgba(9,9,9,.6);
+    padding-left:6px;
 }
 #contextMenu a i {
     font-family: "iconfont" !important;
