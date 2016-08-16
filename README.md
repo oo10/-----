@@ -340,7 +340,7 @@ dataset属性存取data-\*自定义属性的值
         console.log(el.dataset.id); // ‘1234’
         console.log(el.dataset.name); // ‘小白吗
         console.log(el.dataset.dateOfBirth); // ''
-       el.dataset.dateOfBirth = '1985-01-05'; // 设置data-date-of-birth的值
+        el.dataset.dateOfBirth = '1985-01-05'; // 设置data-date-of-birth的值
         console.log('someDataAttr' in el.dataset);// false
         el.dataset.someDataAttr = 'mydata';
         console.log('someDataAttr' in el.dataset);// true
@@ -488,7 +488,6 @@ $(document).ready(function() {
 
             // 该函数用来让widget实现移动、折叠、全屏等操作
             pageSetUp();
-
             var $registerForm = $("#smart-form-register").validate({
 
                 // 鼠标焦点离开必填项输入框时出现的提示信息
