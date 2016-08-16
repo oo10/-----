@@ -328,38 +328,38 @@ dataset属性存取data-\*自定义属性的值
 <div id=“user” data-id=“1234” data-name=“小白吗” data-date-of-birth>小白</div>
 ```
 ```
-    var el = document.querySelector(‘#user’);
+    var el = document.querySelector(‘#user’);
         console.log(el.id); // ‘user’
-        console.log(el.dataset);// 一个DOMStringMap
-        console.log(el.dataset.id); // ‘1234’
-        console.log(el.dataset.name); // ‘小白吗'
-        console.log(el.dataset.dateOfBirth); // ''
-        el.dataset.dateOfBirth = '1985-01-05'; // 设置data-date-of-birth的值.
-        console.log('someDataAttr' in el.dataset);// false
-        el.dataset.someDataAttr = 'mydata';
-        console.log('someDataAttr' in el.dataset);// true
+        console.log(el.dataset);// 一个DOMStringMap
+        console.log(el.dataset.id); // ‘1234’
+        console.log(el.dataset.name); // ‘小白吗
+        console.log(el.dataset.dateOfBirth); // ''
+       el.dataset.dateOfBirth = '1985-01-05'; // 设置data-date-of-birth的值
+        console.log('someDataAttr' in el.dataset);// false
+        el.dataset.someDataAttr = 'mydata';
+        console.log('someDataAttr' in el.dataset);// true
 ```
 JQ data()方法
 ```
 var myid= jQuery(“#user”).data(‘id’);
-console.log(myid); // ‘1234’
+console.log(myid); // ‘1234’
 ```
 data-属性选择器
 ```
 <script>
-    // 使用 querySelectorAll 选择元素
+    // 使用 querySelectorAll 选择元素
     // 选择所有包含 'data-flowering' 属性的元素
-    document . querySelectorAll ( '[data-flowering]' ) ;
-    // 选择所有包含 'data-text-colour' 属性值为red的元素
+    document . querySelectorAll ( '[data-flowering]' ) ;
+    // 选择所有包含 'data-text-colour' 属性值为red的元素
     document . querySelectorAll ( '[data-text-colour="red"]' ) ;
-</script>
+</script>
 ```
 ```
 <style type =“text/css”>
-    .user { width : 256px ; height : 200px }
+    .user { width : 256px ; height : 200px }
     .user[data-name=‘小白吗’] { color : brown }
-    .user[data-name=‘小黑吗'] { color : black }
-</style>
+    .user[data-name=‘小黑吗'] { color : black }
+</style>
 ```
 ### (二)字体图标
 #### 优点
@@ -386,19 +386,19 @@ data-属性选择器
 
 ![](http://obzg8bbu1.bkt.clouddn.com/widget.png)
 ```
-<section id="widget-grid" class="">
-    <!-- row -->
+<section id="widget-grid" class="">
+    <!-- row -->
     <div class="row">
         <div id="wid-id-0" class="jarviswidget jarviswidget-color-darken" data-widget-editbutton="false" data-widget-deletebutton="false">
             <header>
                 <span class="widget-icon"> <i class="fa fa-table"></i> </span>
-                <h2>投资者列表</h2>
-            </header>
+                <h2>投资者列表</h2>
+            </header>
             <!-- widget div-->
-            <div>
+            <div>
             <!-- widget content -->
-                <div class="widget-body no-padding"...>
-            <!-- end widget content -->
+                <div class="widget-body no-padding"...>
+            <!-- end widget content -->
             </div>
             <!-- end widget div -->
         </div>
@@ -440,10 +440,10 @@ data-属性选择器
 原始包中的datatables.html文件，功能有：快速查找、按栏目筛选、显示／隐藏栏目、导出、分页和设置每页显示行数。
 ```
 <!—  dataTables需引入的JS文件  ->
-<script src="js/plugin/datatables/jquery.dataTables.min.js"></script>
+<script src="js/plugin/datatables/jquery.dataTables.min.js"></script>
 <script src="js/plugin/datatables/dataTables.colVis.min.js"></script>
-<script src="js/plugin/datatables/dataTables.tableTools.min.js"></script>
-<script src="js/plugin/datatables/dataTables.bootstrap.min.js"></script>
+<script src="js/plugin/datatables/dataTables.tableTools.min.js"></script>
+<script src="js/plugin/datatables/dataTables.bootstrap.min.js"></script>
 <script src="js/plugin/datatable-responsive/datatables.responsive.min.js"></script>
 ```
 ![](http://obzg8bbu1.bkt.clouddn.com/datatable.png)
@@ -454,22 +454,22 @@ data-属性选择器
 
 ```
 var dataSet = [
-    ['大白','134-2463-8341','21','长沙','20160811'],
+    ['大白','134-2463-8341','21','长沙','20160811'],
     ...
-];
+];
 $(document).ready(function() {
       $('#demo').html( '<table cellpadding="0" cellspacing="0" border="0" class="display" id="example"></table>' );
-      $('#example').dataTable( {
+      $('#example').dataTable( {
             "data": dataSet,
-            "columns": [
-                    { "title": "姓名" },
-                    { "title": "电话" },
-                    { "title": "年龄" },
+            "columns": [
+                   { "title": "姓名" },
+                   { "title": "电话" },
+                   { "title": "年龄" },
                     { "title": "城市", "class": "center" },
                     { "title": "日期", "class": "center" }
             ]
     } );
-} );
+} );
 ```
 ### (五)验证表单
 原始包form-templates.html文件。
@@ -559,13 +559,13 @@ $(document).ready(function() {
 ### (六)消息
 原始包general-elements.html文件。只要将class类alert-warning、fa-warning更换就可以实现成功（alert-success fa-check）、告知说明（alert-info fa-info）、错误（alert-danger fa-times）三种消息。
 ```
-<div class="alert alert-warning fade in">
+<div class="alert alert-warning fade in">
     <button class="close" data-dismiss="alert">
-        ×
+        ×
     </button>
     <i class="fa-fw fa fa-warning"></i>
-    <strong>警告！</strong> 黄色，颜色值#efe1b3。
-</div>
+    <strong>警告！</strong> 黄色，颜色值#efe1b3。
+</div>
 ```
 
 ---
