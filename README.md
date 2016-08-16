@@ -396,9 +396,9 @@ data-属性选择器
     <!-- row -->
     <div class="row">
         <div id="wid-id-0" class="jarviswidget jarviswidget-color-darken" data-widget-editbutton="false" data-widget-deletebutton="false">
-            <header>
-                <span class="widget-icon"> <i class="fa fa-table"></i> </span>
-                <h2>投资者列表</h2>
+            <header>
+                 <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+                 <h2>投资者列表</h2>
             </header>
             <!-- widget div-->
             <div>
@@ -462,15 +462,15 @@ data-属性选择器
 var dataSet = [
     ['大白','134-2463-8341','21','长沙','20160811'],
     ...
-];
+    ];
 $(document).ready(function() {
-      $('#demo').html( '<table cellpadding="0" cellspacing="0" border="0" class="display" id="example"></table>' );
-      $('#example').dataTable( {
+        $('#demo').html( '<table cellpadding="0" cellspacing="0" border="0" class="display" id="example"></table>' );
+        $('#example').dataTable( {
             "data": dataSet,
             "columns": [
-                   { "title": "姓名" },
-                   { "title": "电话" },
-                   { "title": "年龄" },
+                    { "title": "姓名" },
+                    { "title": "电话" },
+                    { "title": "年龄" },
                     { "title": "城市", "class": "center" },
                     { "title": "日期", "class": "center" }
             ]
@@ -480,12 +480,11 @@ $(document).ready(function() {
 ### (五)验证表单
 原始包form-templates.html文件。
 ```
-<!-- 验证表单需引入的JS文件 -->
+<!-- 验证表单需引入的JS文件 -->
 <script src="js/plugin/jquery-validate/jquery.validate.min.js"></script>
 ```
 ```
         $(document).ready(function () {
-
             // 该函数用来让widget实现移动、折叠、全屏等操作
             pageSetUp();
             var $registerForm = $("#smart-form-register").validate({
