@@ -11,13 +11,17 @@ summary: Bootstrap3后台管理系统模板
 -->
 
 # SmartAdmin
+
 ---
+
 ## 一、简介
 SmartAdmin 是基于[ Bootstrap ](http://getbootstrap.com/)技术和各种 JS 插件（40多种）所创建的 UI
     组件库，具有独特的平面设计和响应式布局，布局的页面不仅适用于桌面设备，而且也能很好的自适应手机和平板设备。SmartAdmin 有 HTML 、 AJAX 、 PHP 和 AngularJS 四种版本。
 
 ![](http://obzg8bbu1.bkt.clouddn.com/%E5%9B%BE%E7%89%871.png)
+
 ---
+
 ## 二、特点
 *   兼容最新的 Chrome 、Firefox 、Opera 、Safari 和 IE9（包括 IE9 ）以上版本浏览器。
 *   大量使用了能兼容各浏览器的 HTML5 标签。
@@ -31,7 +35,9 @@ SmartAdmin 是基于[ Bootstrap ](http://getbootstrap.com/)技术和各种 JS �
 *   可以折叠、最小化导航菜单（ hover 时出现），对于屏幕尺寸较小的移动设备，导航菜单可以灵活调整。
 *   组件强大到让你无法相信。
 *   自定义树视图。
+*   
 ---
+
 ## 三、结构
 
 ### (一)文件目录结构
@@ -378,7 +384,7 @@ data-属性选择器
 进一步了解可以访问该网址 http://fortawesome.github.io/Font-Awesome/icons/ 。
 
 #### Iconfont.cn
-进一步了解可以访问该网址 http://http://iconfont.cn/ 。
+进一步了解可以访问该网址 http://iconfont.cn/ 。
 
 ### (三)widget 窗口部件
 原始包中的widgets.html文件，功能有：色块选择、折叠、全屏、删除和切换tab标签。
