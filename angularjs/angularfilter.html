@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Filter过滤器的使用</title>
+    <script src="../lib/angular/angular.min.js"></script>
+    <script>
+        (function(angular){
+            var app = angular.module('myApp', []);
+            app.controller('myCtrl', function($scope,$filter) {
+
+                var data = [
+                    { seq: 1, country: "魏国", name: "曹操",age : 45 },
+                    { seq: 2, country: "魏国", name: "张辽" ,age: 34},
+                    { seq: 3, country: "魏国", name: "司马懿" ,age: 36 },
+                    { seq: 4, country: "魏国", name: "夏侯淳",age: 40 },
+                    { seq: 5, country: "蜀国", name: "刘备",age: 50 },
+                    { seq: 6, country: "蜀国", name: "关羽",age: 45 },
+                    { seq: 7, country: "蜀国", name: "张飞",age: 46 },
+                    { seq: 8, country: "蜀国", name: "赵云",age: 35 },
+                    { seq: 9, country: "吴国", name: "孙权" ,age: 30 },
+                    { seq: 10, country: "吴国", name: "周瑜",age: 32 },
+                    { seq: 11, country: "吴国", name: "鲁肃",age: 33 },
+                    { seq: 12, country: "吴国", name: "黄盖",age: 55 }
+                ];
+
+                $scope.data=data;
+
+                $scope.myFilter=function(str){
+                    var f=$filter("filter");
+                    $scope.data=f(data,str);
+                };
+            });
+        })(window.angular);
+    </script>
+</head>
+<body>
+    <div ng-app="myApp" ng-controller="myCtrl">
+
+        <button ng-click="myFilter()">全部</button>
+        <button ng-click="myFilter('蜀国')">蜀国</button>
+        <button ng-click="myFilter('魏国')">魏国</button>
+        <button ng-click="myFilter('吴国')">吴国</button>
+        <table>
+        <tr>
+            <th>ID号</th>
+            <th>姓名</th>
+            <th>国别</th>
+            <th>年龄</th>
+        </tr>
+        <tr ng-repeat="hero in data|filter">
+            <td>{{ hero.seq }}</td>
+            <td>{{ hero.name }}</td>
+            <td>{{ hero.country }}</td>
+            <td>{{ hero.age }}</td>
+        </tr>
+    </table>
+    </div>
+</body>
+</html>

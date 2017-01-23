@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>AngularJs</title>
+    <script src="../lib/angular/angular.min.js"></script>
+    <script>
+
+    </script>
+</head>
+<body>
+    <div ng-app="" ng-init="a=1;b=2;c={name:'小李',sex:'男'};d=[{value:'0',text:'男'},{value:'1',text:'女'},{value:'2',text:'未知'}];e=['a','c','b'];f=[{name:'小李',id:1},{name:'小周',id:2}]">
+        {{ a+b }}<br />
+        {{ c.name+c.sex }}<br />
+        {{ e[2] }}<br />
+        <span>{{ a+b }}</span><br />
+        <span ng-bind="a+b"></span><br />
+        <a href="#">{{c.name}}</a>
+        <input ng-model="b" type="text" /><br />
+        <h3>ng-repeat:</h3><br />
+        <span ng-repeat="z in e | orderBy:this:true">{{ z | uppercase}}</span><br />
+        <select name="sex">
+            <option ng-repeat="x in d" value="{{x.value}}">{{x.text}}</option>
+        </select>
+        过滤器orderBy
+        <span ng-repeat="zz in d|orderBy:value:true">{{ zz.text}}</span>
+        <span ng-repeat="zzz in f|orderBy:'id':true">{{ zzz.name }}</span>
+    </div>
+
+</body>
+</html>

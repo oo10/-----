@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>计算Computed</title>
+    <script src="../lib/vue/vue.js?v=3"></script>
+</head>
+<body>
+    <div id="computed">
+        a:<input type="text" v-model.number="a" /><br />
+        b:<input type="text" v-model.number="b" /><br />
+        <button @click="add">在此基础上再加100</button><br />
+        {{sum}}<br />
+        {{sum2}}
+    </div>
+<script>
+    var c=new Vue({
+        el:'#computed',
+        data:{
+            a:1,
+            b:10,
+            sum:0,
+            sum2:0
+        },
+        computed:{
+            sum:function(){
+                var result=0;
+                for(var i=this.a;i<=this.b;i++){
+                    result+=i;
+                }
+                return result;
+            }
+        },
+        methods:{
+            add:function(){
+                this.sum2+=this.sum;
+            }
+        }
+    });
+</script>
+</body>
+</html>

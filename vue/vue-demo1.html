@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>VUE例子</title>
+    <script src="../lib/vue/vue.js?v=3"></script>
+    <style>
+        .left-btn-enter-active {
+            animation: left-btn-in .5s;
+        }
+        .left-btn-leave-active {
+            animation: left-btn-out .5s;
+        }
+        @keyframes left-btn-in {
+            0% {
+                left:60px;
+                opacity:0;
+            }
+            100% {
+                left:0px;
+                opacity:1;
+            }
+        }
+        @keyframes left-btn-out {
+            0% {
+                left:0px;
+                opacity:1;
+            }
+            100% {
+                left:60px;
+                opacity:0;
+            }
+        }
+        .left-text-enter-active {
+            animation: left-text-in .5s;
+        }
+        .left-text-leave-active {
+            animation: left-text-out .5s;
+        }
+        @keyframes left-text-in {
+            0% {
+                left:60px;
+                opacity:0;
+            }
+            100% {
+                left:30px;
+                opacity:1;
+            }
+        }
+        @keyframes left-text-out {
+            0% {
+                left:30px;
+                opacity:1;
+            }
+            100% {
+                left:60px;
+                opacity:0;
+            }
+        }
+    </style>
+</head>
+<body>
+    冒号：相当于v-bind
+    @相当于v-on
+    <div id="demo1" :style="myStyle">{{a+b}}</div>
+    <div id="demo2">
+        <input type="text" name="a" v-model="c" />
+        <button v-if="showButton" @click="alert">点我</button>
+
+    </div>
+    <div id="demo3">
+        <number-button v-bind:n="20"></number-button>
+        <number-button></number-button>
+        <number-button></number-button>
+        <number-button></number-button>
+        <number-button></number-button>
+        <number-button></number-button>
+        <number-button></number-button>
+        <number-button></number-button>
+        <number-button></number-button><number-button></number-button>
+        <number-button></number-button>
+        <number-button></number-button>
+        <number-button v-bind:n="10"></number-button>
+        <number-button></number-button>
+        <number-button></number-button>
+        <number-button></number-button>
+        <number-button></number-button>
+        <number-button></number-button>
+        <number-button></number-button>
+
+
+
+     </div>
+
+    <template id="number-button-template">
+        <div :style="elStyle">
+            <transition name="left-btn">
+                <div v-if="n" :style="btnStyle" @click="reduce">-</div>
+            </transition>
+            <transition name="left-text">
+                <div v-if="n" :style="textStyle">{{n}}</div>
+            </transition>
+            <div :style="[btnStyle,rightBtnStyle]" @click="add">+</div>
+        </div>
+    </template>
+    <script>
+        Vue.component('number-button', {
+            template:'#number-button-template',
+            props: {
+                n: {   // 可选字段，有默认值
+                    default: 0
+                    //required: true //必须提供字段
+                }
+            },
+            data:function(){return {
+                elStyle:{
+                    width:'90px',
+                    height:'30px',
+                    position:'relative',
+                    float:'right'
+                },
+                btnStyle:{
+                    left:'0px',
+                    position:'absolute',
+                    border:'1px solid #aaaaaa',
+                    backgroundColor:'#cccccc',
+                    textAlign:'center',
+                    fontWeight:'bold',
+                    boxSizing:'border-box',
+                    color:'#000000',
+                    width:'30px',
+                    height:'30px',
+                    fontSize:'28px',
+                    lineHeight:'28px',
+                    cursor:'point',
+                    borderRadius:'50%'
+                },
+                rightBtnStyle:{
+                    left:'60px'
+                },
+                textStyle:{
+                    width:'30px',
+                    height:'30px',
+                    position:'absolute',
+                    left:'30px',
+                    textAlign:'center',
+                    fontSize:'22px',
+                    lineHeight:'30px'
+                }
+            }},
+            methods:{
+                add:function(){
+                    this.n++;
+                },
+                reduce:function(){
+                    this.n--;
+                }
+            }
+        });
+
+        var demo3=new Vue({
+            el:'#demo3'
+        });
+
+        var demo1=new Vue({
+            el:'#demo1',
+            data:{
+                a:1,
+                b:2,
+                myStyle:'background-color:#ff0000;'
+            }
+        });
+
+        var demo2=new Vue({
+            el:'#demo2',
+            data:{
+                c:1,
+                showButton:true
+            },
+            methods:{
+                alert:function(){
+                    //this指向整个VUE实例
+                    this.showButton=false;
+                    this.c=5;
+                }
+            }
+        });
+
+        demo2.$watch('c', function (newVal, oldVal) {
+            demo1.a=parseInt(newVal);
+            // 这个回调将在 `vm.a`  改变后调用
+        })
+
+        //alert(demo1.a);
+    </script>
+</body>
+</html>

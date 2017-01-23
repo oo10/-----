@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>购物车</title>
+    <script src="../lib/vue/vue.js"></script>
+</head>
+<body>
+    <form id="shopping-cart">
+        <div v-for="item in goods">
+            <input type="checkbox" v-model="item.isChecked" />
+            {{item.goodsName}}
+            价格：{{(item.price/100).toFixed(2)}}
+        </div>
+        <input type="checkbox" @change="checkAll" v-model="isCheckAll" />
+        全选
+        总价格：{{(allPrice/100).toFixed(2)}}
+    </form>
+<script>
+    var shoppingCart=new Vue({
+        el:'#shopping-cart',
+        data:{
+            isCheckAll:false,
+            goods:[
+                {isChecked:false,goodsId:1,goodsName:'芭比娃娃',price:6800,count:2},
+                {isChecked:false,goodsId:2,goodsName:'方便面',price:1150,count:5},
+                {isChecked:false,goodsId:3,goodsName:'手提电脑',price:420000,count:1},
+                {isChecked:false,goodsId:4,goodsName:'华为手机',price:129900,count:1},
+                {isChecked:false,goodsId:5,goodsName:'羽绒服',price:25800,count:1},
+                {isChecked:false,goodsId:6,goodsName:'袜子',price:1800,count:2}
+            ]
+        },
+        computed:{
+            allPrice:function(){
+                var total=0;
+                for(var i=0;i<this.goods.length;i++){
+                    if(this.goods[i].isChecked)
+                        total+=this.goods[i].price*this.goods[i].count;
+                }
+                return total;
+            }
+        },
+        methods:{
+            checkAll:function(){
+                for(var i=0;i<this.goods.length;i++){
+                    this.goods[i].isChecked=this.isCheckAll;
+                }
+            }
+        }
+    });
+</script>
+</body>
+</html>

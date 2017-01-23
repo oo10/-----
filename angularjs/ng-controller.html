@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../lib/angular/angular.min.js"></script>
+    <script>
+        (function(angular){
+            var app = angular.module('myApp', []);
+            app.controller('myCtrl', function($scope,$filter) {
+                $scope.firstName = "John";
+                $scope.lastName = "Doe";
+                //$scope.data={a:1,b:'2'};
+                var now=new Date();
+                $scope.data={}
+                $scope.data.time=now;
+                $scope.data.content='共产党是一个伟大的党,我们要紧密的团结在共产党的周围！高举江泽民同志三个代表重要思想，习近平主席社会主义价值观！';
+                var data1=[
+                    {studentId:1,studentName:'张三',yuwen:88,shuxue:90,yingyu:62},
+                    {studentId:2,studentName:'张四',yuwen:43,shuxue:90,yingyu:62},
+                    {studentId:3,studentName:'张五',yuwen:62,shuxue:21,yingyu:22},
+                    {studentId:4,studentName:'张六',yuwen:68,shuxue:40,yingyu:62},
+                    {studentId:5,studentName:'张七',yuwen:90,shuxue:99,yingyu:88},
+                    {studentId:6,studentName:'张八',yuwen:60,shuxue:23,yingyu:22},
+                    {studentId:7,studentName:'张九',yuwen:71,shuxue:42,yingyu:82}
+                ];
+                $scope.class=data1;
+
+                $scope.order=function(str){
+                    var f=$filter('orderBy');
+                    $scope.class=f($scope.class,str,true);
+                };
+
+                $scope.showAll=function(){
+                    $scope.class=data1;
+                };
+
+                $scope.showGuaKe=function(){
+                    var data2=[];
+                    for(var i= 0,max=data1.length;i<max;i++){
+                        if(data1[i].shuxue<60||data1[i].yuwen<60||data1[i].yingyu<60)
+                            data2.push(data1[i]);
+                    }
+                    $scope.class=data2;
+                };
+            });
+
+            app.filter('replaceAll',function(){
+                return function(input,badChar,newChar){
+                    return input.replace(new RegExp(badChar,'g'),newChar);  //input.toLocaleTimeString();
+                }
+            });
+
+            app.filter('replaceBadChar',function($filter){
+                return function(input){
+                    var f=$filter("replaceAll");
+                    var str=f(input,"共产党","***");
+                    str=f(str,"习近平","***");
+                    str=f(str,"江泽民","***");
+
+                    return str;//input.replace(new RegExp(badChar,'g'),newChar);  //input.toLocaleTimeString();
+                }
+            });
+        })(window.angular);
+    </script>
+</head>
+<body>
+<h1>使用控制器</h1>
+<div ng-app="myApp" ng-controller="myCtrl">
+
+    名: <input type="text" ng-model="firstName"><br>
+    姓: <input type="text" ng-model="lastName"><br>
+    <br>
+    姓名: {{firstName + " " + lastName}}
+    <br />
+    <span style="color:Red;">{{data.content|replaceBadChar}}</span><br />
+    {{data.time|date:'yyyy/MM/dd hh:mm:ss:ms'}}<br />
+    <button ng-click="showAll()">显示全部</button>
+    <button ng-click="showGuaKe()">挂科专家</button>
+    <table border="1" cellpadding="5" style="border-collapse:collapse;">
+        <tr>
+            <th>ID号</th>
+            <th>姓名</th>
+            <th ng-click="order('yuwen')">语文</th>
+            <th ng-click="order('shuxue')">数学</th>
+            <th ng-click="order('yingyu')">英语</th>
+            <th ng-click="order('yuwen+shuxue+yingyu')">总分</th>
+        </tr>
+        <tr ng-repeat="stu in class">
+            <td>{{ stu.studentId }}</td>
+            <td>{{ stu.studentName }}</td>
+            <td>{{ stu.yuwen }}</td>
+            <td>{{ stu.shuxue }}</td>
+            <td>{{ stu.yingyu }}</td>
+            <td>{{ stu.yuwen+stu.shuxue+stu.yingyu }}</td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

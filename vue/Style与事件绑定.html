@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Style与事件绑定</title>
+    <script src="../lib/vue/vue.js?v=3"></script>
+    <script src="../lib/zepto/zepto.min.js?v=3"></script>
+    <style>
+        #container{
+            border:1px solid #000000;
+            width:500px;
+            height:600px;
+            position:relative;
+            margin:0 auto;
+            overflow:hidden;
+        }
+
+        .plain{
+            position:absolute;
+        }
+
+        .animation{
+            animation:plain-animation 1s;
+        }
+
+        @keyframes plain-animation{
+            0%{
+                transform:scaleX(1) scale(0.8);
+            }
+            50%{
+                transform:scaleX(-1) scale(1.5);
+            }
+            100%{
+                transform:scaleX(1) scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <img id="plain" class="plain" :class="{animation:isAnimation}" :style="{top:y+'px',left:x+'px'}" :src="src" />
+    </div>
+    <div id="demo1">
+    <template v-if="true">
+        <h1>Title</h1>
+        <p>Paragraph 1</p>
+        <p>Paragraph 2</p>
+    </template>
+    </div>
+<script>
+//        new Vue({
+//            el:'#demo1'
+//        });
+//    new Vue({
+//        el:'#id',
+//        data:{},
+//        methods:{
+//            add:function(){},
+//            delte:function(){}
+//        },
+//        computed:{},
+//        created:{},
+//        destroyed:{}
+//    })
+
+    var plain=new Vue({
+        el:'#plain',
+        data:{
+            x:199,
+            y:474,
+            isAnimation:false,
+            n:0,
+            src:'hero1.png'
+        },
+        methods:{
+            bomb:function(){
+                if(!plain.isAnimation){
+                    plain.isAnimation=true;
+                    setTimeout(function(){
+                        plain.isAnimation=false;
+                    },1000);
+                }
+            },
+            die:function(){
+                var dieImgs=[
+                    'hero_blowup_n1.png',
+                    'hero_blowup_n2.png',
+                    'hero_blowup_n3.png',
+                    'hero_blowup_n4.png'
+                ];
+                var index=0;
+                var n=setInterval(function(){
+                    clearInterval(plain.n);
+                    plain.src=dieImgs[index];
+                    index++;
+                    if(index===4){
+                        clearInterval(n);
+                        plain.$destroy();
+                    }
+                },50);
+            }
+        },
+        created:function(){ //通常用于获取服务器数据
+            var _self=this;
+            this.n=setInterval(function(){
+                _self.src=_self.src=='hero1.png'?'hero2.png':'hero1.png';
+            },100);
+        },
+        destroyed:function(){
+            plain.$el.remove();
+        }
+    });
+
+    $(document).on('keydown',function(e){
+        //alert(e.keyCode);
+        switch(e.keyCode){
+            case 87:
+                plain.y-=4;
+                break;
+            case 65:
+                plain.x-=4;
+                break;
+            case 83:
+                plain.y+=4;
+                break;
+            case 68:
+                plain.x+=4;
+                break;
+            case 73:
+                plain.$options.methods.bomb();
+                break;
+            case 79:
+                plain.$options.methods.die();
+                break;
+        }
+    });
+</script>
+</body>
+</html>

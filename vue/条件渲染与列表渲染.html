@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>条件渲染与列表渲染</title>
+    <script src="../lib/vue/vue.js?v=3"></script>
+    <script src="../lib/zepto/zepto.min.js?v=3"></script>
+</head>
+<body>
+    <form id="sub-form">
+        <input name="articleId" v-show="isShow" />
+        <button @click.stop.prevent="disappear">消失</button>
+        <button @click.stop.prevent="submit">提交表单</button><br />
+        <template v-for="(item,index) in items">
+            <template v-for="(item,key,index) in item">
+                {{index}}、{{key}}:{{item}}<br />
+            </template>
+        </template>
+    </form>
+<script>
+    new Vue({
+       el:'#sub-form',
+       data:{
+           isShow:true,
+           items:[
+               {id:135,name:'小周',age:23},
+               {id:136,name:'小刘',age:22},
+               {id:137,name:'小旺',age:21}
+           ]
+       },
+        methods:{
+            disappear:function(e){
+                this.isShow=false;
+            },
+            submit:function(e){
+                alert($(this.$el).serialize());
+            }
+        }
+    });
+</script>
+</body>
+</html>
